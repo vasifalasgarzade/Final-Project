@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from brothersclub.thesoftking.com/meverex/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Jan 2020 13:54:30 GMT -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -143,7 +143,7 @@
         <nav class="navbar navbar-expand-lg main-menu">
             <div class="container">
 
-                <a class="navbar-brand" href="index-2.html"><img src="~/Public/images/logo-2.png" class="d-inline-block align-top" alt=""></a>
+                <a class="navbar-brand" href="@Url.Action("index","home")"><img src="~/Public/images/logo-2.png" class="d-inline-block align-top" alt=""></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="menu-toggle"></span>
@@ -152,51 +152,26 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item ">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-                           
+                            <a class="nav-link" href="@Url.Action("index","home")"   >Home</a>
+
                         </li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Texnology")">Technology</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lifestyle</a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="category.html">Sports</a></li>
-                                <li><a class="dropdown-item" href="category-2.html">Fashion</a></li>
-                                <li><a class="dropdown-item" href="category-3.html">Travel</a></li>
-                                <li><a class="dropdown-item" href="category-4.html">Food</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("sports","news")">Sports</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Fashion","news")">Fashion</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Travel","news")">Travel</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Food","news")">Food</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="category.html">Sports</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Post Layout</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="post-right-sidebar.html">With Sidebar Right</a></li>
-                                <li><a class="dropdown-item" href="post-left-sidebar.html">With Sidebar left</a></li>
-                                <li><a class="dropdown-item" href="post-full.html">Full post</a></li>
-                                <li><a class="dropdown-item" href="post-full-2.html">Without sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Post Features</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="gallery-post.html">Gallery Post</a></li>
-                                <li><a class="dropdown-item" href="video-post.html">Video Post</a></li>
-                                <li><a class="dropdown-item" href="audio-post.html">Audio Post</a></li>
-                                <li><a class="dropdown-item" href="quote-post.html">Quote Post</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="about.html">About us</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-                                <li><a class="dropdown-item" href="error.html">404 error</a></li>
-                                <li><a class="dropdown-item" href="privacy.html">Privacy</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("index","post")">Post</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("index","gallery")">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("index","about")">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("index","contact")">Contact</a></li>
                     </ul>
-                    <div class="header-btn justify-content-end">
-                        <button><i class="fa fa-random"></i></button>
-                    </div>
+                   
                     <div class="header-btn justify-content-end">
                         <button type="button" class="search-btn"><i class="fa fa-search"></i></button>
                     </div>

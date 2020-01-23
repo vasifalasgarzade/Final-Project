@@ -879,50 +879,8 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="hot-carousel owl-carousel">
-                    <div class="single-post-2">
-                        <a href="#">
-                            <img src="~/Public/images/post/12.jpg" alt="">
-                            <i class="fa fa-play"></i>
-                        </a>
-                        <div class="post-inside-content">
-                            <h2><a href="#">Impressive business got raised</a></h2>
-                            <div class="post-meta">
-                                <a href="#" class="author">Ridoy</a>
-                                <a href="#" class="date">September 4, 2019</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-post-2">
-                        <a href="#">
-                            <img src="~/Public/images/post/10.jpg" alt="">
-                            <i class="fa fa-play"></i>
-                        </a>
-                        <div class="post-inside-content">
-                            <h2><a href="#">Impressive business got raised</a></h2>
-                            <div class="post-meta">
-                                <a href="#" class="author">Ridoy</a>
-                                <a href="#" class="date">September 4, 2019</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-post-2">
-                        <a href="#">
-                            <img src="~/Public/images/post/3.jpg" alt="">
-                            <i class="fa fa-play"></i>
-                        </a>
-                        <div class="post-inside-content">
-                            <h2><a href="#">Impressive business got raised</a></h2>
-                            <div class="post-meta">
-                                <a href="#" class="author">Ridoy</a>
-                                <a href="#" class="date">September 4, 2019</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      @{ 
+          Html.RenderPartial("~/Views/Shared/_Slider.cshtml");
+      }
     </div>
 </section><!--/Content Section-->
