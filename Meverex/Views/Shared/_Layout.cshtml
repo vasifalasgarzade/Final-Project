@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    List<SocialLink> socialLinks = ViewBag.SocialLink as List<SocialLink>;
+    Setting setting = ViewBag.Setting as Setting; 
+}
+
+<!DOCTYPE html>
 <html lang="en">
 
 
@@ -44,48 +49,7 @@
             <span class="spinner-rotate"></span>
         </div>
     </div><!-- /Preloader -->
-    <!--Header Top-->
-    <div class="header-top white-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6">
-                    <div class="single-header-top">
-                        <p><i class="fa fa-calendar"></i>24 September 2019</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                    <div class="single-header-top">
-                        <ul>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Travel</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-xl-5 col-lg-5 col-md-4 col-sm-6">
-                    <div class="single-header-top">
-                        <div class="social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-6">
-                    <div class="single-header-top last">
-                        <ul>
-                            <li><a href="#" data-toggle="modal" data-target="#account"><i class="fa fa-lock"></i>Account</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/Header Top-->
+   
     <!-- Modal -->
     <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -143,7 +107,7 @@
         <nav class="navbar navbar-expand-lg main-menu">
             <div class="container">
 
-                <a class="navbar-brand" href="@Url.Action("index","home")"><img src="~/Public/images/logo-2.png" class="d-inline-block align-top" alt=""></a>
+                <a class="navbar-brand" href="@Url.Action("index","home")"><img src="~/Public/images/@setting.HeaderLogo" class="d-inline-block align-top" alt=""></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="menu-toggle"></span>
@@ -202,7 +166,7 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                     <div class="footer-widget">
-                        <a href="#" class="footer-logo"><img src="~/Public/images/logo-2.png" alt=""></a>
+                        <a href="#" class="footer-logo"><img src="~/Public/images/@setting.FooterLogo" alt=""></a>
                         <p>Surrounded to me occasional pianoforte alteration unaffected impossible ye. For saw half than cold. Pretty merits waited six talked  alteration unaffected impossible ye. For saw half than cold. Pretty merits waited</p>
                         <div class="social">
                             <a href="#" class="cl-facebook"><i class="fa fa-facebook"></i></a>

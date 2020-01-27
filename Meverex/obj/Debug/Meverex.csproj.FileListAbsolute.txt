@@ -74,3 +74,9 @@ C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.csproj.CoreCompil
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.csproj.CopyComplete
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.dll
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.pdb
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\bin\EntityFramework.dll
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\bin\EntityFramework.SqlServer.dll
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\bin\EntityFramework.xml
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\bin\EntityFramework.SqlServer.xml
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.init.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.csproj.GenerateResource.cache

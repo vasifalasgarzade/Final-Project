@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Meverex.Controllers
 {
-    public class GalleryController : Controller
+    public class GalleryController : BaseController
     {
         // GET: Gallery
         public ActionResult Index()

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Meverex.Controllers
 {
-    public class PostController : Controller
+    public class PostController : BaseController
     {
         // GET: Post
         public ActionResult Index()

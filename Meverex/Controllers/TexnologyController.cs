@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Meverex.Controllers
 {
-    public class TexnologyController : Controller
+    public class TexnologyController : BaseController
     {
         // GET: Texnology
         public ActionResult Index()
