@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Texnology>
 @{
     ViewBag.Title = "Index";
 }
@@ -24,118 +24,25 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6">
                     <div class="row">
+                        @foreach (var item in Model)
+                        {
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="single-post-4">
                                 <div class="post-inside-img">
-                                    <img src="~/Public/images/category/technology/1.jpg" alt="">
+                                    <img src="~/Public/images/category/technology/@item.Photo" alt="">
                                     <div class="category-tag">
-                                        <a href="#" class="mint-bg">Tech</a>
+                                        <a href="@item.BtnUrl" target="_blank" class="mint-bg">@item.BtnName</a>
                                     </div>
                                 </div>
                                 <div class="post-inside-content">
-                                    <h3><a href="#">Finibus Bonorum et Malorum</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal Many desktop publishing packages and web page</p>
+                                    <h3><a href="#">@item.Tittle</a></h3>
+                                    <p>@item.Description</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-post-4">
-                                <div class="post-inside-img">
-                                    <img src="~/Public/images/category/technology/2.jpg" alt="">
-                                    <div class="category-tag">
-                                        <a href="#" class="primary-bg">Virtual Reality</a>
-                                    </div>
-                                </div>
-                                <div class="post-inside-content">
-                                    <h3><a href="#">Finibus Bonorum et Malorum</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal Many desktop publishing packages and web page</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-post-4">
-                                <div class="post-inside-img">
-                                    <img src="~/Public/images/category/technology/3.jpg" alt="">
-                                    <div class="category-tag">
-                                        <a href="#" class="yellow-bg">Drone</a>
-                                    </div>
-                                </div>
-                                <div class="post-inside-content">
-                                    <h3><a href="#">Finibus Bonorum et Malorum</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal Many desktop publishing packages and web page</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-post-4">
-                                <div class="post-inside-img">
-                                    <img src="~/Public/images/category/technology/4.jpg" alt="">
-                                    <div class="category-tag">
-                                        <a href="#" class="green-bg">circuit</a>
-                                    </div>
-                                </div>
-                                <div class="post-inside-content">
-                                    <h3><a href="#">Finibus Bonorum et Malorum</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal Many desktop publishing packages and web page</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-post-4">
-                                <div class="post-inside-img">
-                                    <img src="~/Public/images/category/technology/5.jpg" alt="">
-                                    <div class="category-tag">
-                                        <a href="#" class="mint-bg">Programming</a>
-                                    </div>
-                                </div>
-                                <div class="post-inside-content">
-                                    <h3><a href="#">Finibus Bonorum et Malorum</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal Many desktop publishing packages and web page</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-post-4">
-                                <div class="post-inside-img">
-                                    <img src="~/Public/images/category/technology/6.jpg" alt="">
-                                    <div class="category-tag">
-                                        <a href="#" class="blue-bg">Server</a>
-                                    </div>
-                                </div>
-                                <div class="post-inside-content">
-                                    <h3><a href="#">Finibus Bonorum et Malorum</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal Many desktop publishing packages and web page</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-post-4">
-                                <div class="post-inside-img">
-                                    <img src="~/Public/images/category/technology/7.jpg" alt="">
-                                    <div class="category-tag">
-                                        <a href="#" class="yellow-bg">Camera</a>
-                                    </div>
-                                </div>
-                                <div class="post-inside-content">
-                                    <h3><a href="#">Finibus Bonorum et Malorum</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal Many desktop publishing packages and web page</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-post-4">
-                                <div class="post-inside-img">
-                                    <img src="~/Public/images/category/technology/8.jpg" alt="">
-                                    <div class="category-tag">
-                                        <a href="#" class="primary-bg">Data</a>
-                                    </div>
-                                </div>
-                                <div class="post-inside-content">
-                                    <h3><a href="#">Finibus Bonorum et Malorum</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal Many desktop publishing packages and web page</p>
-                                </div>
-                            </div>
-                        </div>
+                        }
+
+                        
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                             <a href="#" class="bttn-mid btn-emt w-100 centered mb-30">Load More</a>
                         </div>

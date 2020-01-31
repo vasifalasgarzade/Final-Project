@@ -9,8 +9,8 @@ namespace Meverex.Controllers
 {
     public class BaseController : Controller
     {
-        protected readonly FinalDbMeverex _context;
-      public BaseController()
+      protected readonly FinalDbMeverex _context;
+       public BaseController()
         {
             _context = new FinalDbMeverex();
             ViewBag.SocialLink = _context.SocialLinks.OrderBy(sl => sl.Orderby).ToList();

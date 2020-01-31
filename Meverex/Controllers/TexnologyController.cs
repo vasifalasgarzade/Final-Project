@@ -11,7 +11,8 @@ namespace Meverex.Controllers
         // GET: Texnology
         public ActionResult Index()
         {
-            return View();
+            
+            return View(_context.Texnologies.ToList());
         }
       
     }

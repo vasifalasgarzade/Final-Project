@@ -138,6 +138,9 @@
       <DependentUpon>202001271612187_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Author.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\News.cs" />
     <Compile Include="Models\SocialLink.cs" />
     <Compile Include="Controllers\TexnologyController.cs" />
     <Compile Include="Data\FinalDbMeverex.cs" />

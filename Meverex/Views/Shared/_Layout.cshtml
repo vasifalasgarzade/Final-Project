@@ -1,5 +1,5 @@
 ﻿@{ 
-    List<SocialLink> socialLinks = ViewBag.SocialLink as List<SocialLink>;
+ List<SocialLink> socialLinks = ViewBag.Sociallink as List<SocialLink>;
     Setting setting = ViewBag.Setting as Setting; 
 }
 
@@ -107,7 +107,7 @@
         <nav class="navbar navbar-expand-lg main-menu">
             <div class="container">
 
-                <a class="navbar-brand" href="@Url.Action("index","home")"><img src="~/Public/images/@setting.HeaderLogo" class="d-inline-block align-top" alt=""></a>
+                <a class="navbar-brand" href="@Url.Action("index","home")"><img src="~/Uploads/@setting.HeaderLogo" class="d-inline-block align-top" alt=""></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="menu-toggle"></span>
@@ -166,13 +166,15 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                     <div class="footer-widget">
-                        <a href="#" class="footer-logo"><img src="~/Public/images/@setting.FooterLogo" alt=""></a>
+                        <a href="#" class="footer-logo"><img src="~/Uploads/@setting.FooterLogo" alt=""></a>
                         <p>Surrounded to me occasional pianoforte alteration unaffected impossible ye. For saw half than cold. Pretty merits waited six talked  alteration unaffected impossible ye. For saw half than cold. Pretty merits waited</p>
                         <div class="social">
-                            <a href="#" class="cl-facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="cl-twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="cl-youtube"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#" class="cl-pinterest"><i class="fa fa-pinterest-p"></i></a>
+                            @foreach (var item in socialLinks)
+                            {
+                            <a href="@item.Url" target="_blank" class="cl-facebook"><i class="fa fa-@item.Icon"></i></a>
+                            }
+                            
+                            
                         </div>
                     </div>
                 </div>
