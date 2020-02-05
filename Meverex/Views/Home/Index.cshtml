@@ -1,4 +1,4 @@
-﻿
+﻿@model HomeViewModel
 @{
     ViewBag.Title = "Home Page";
 }
@@ -7,99 +7,50 @@
 <section class="hero-area gray-bg">
     <div class="container">
         <div class="row">
-            @*<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                <div class="single-post">
-                    <a href="#"><img src="~/Public/images/post/21.jpg" alt=""></a>
-                    <div class="post-inside-content">
-                        <div class="category-tag"><a href="#" class="blue-bg-2">News</a></div>
-                        <h2><a href="#">Phasellus consequat rutrum</a></h2>
-                        <div class="post-meta">
-                            <a href="#" class="author">Ridoy</a>
-                            <a href="#" class="date">September 4, 2019</a>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
+            @foreach (var item in Model.News.Take(3))
+            {
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
                 <div class="single-post">
-                    <a href="#"><img src="~/Public/images/post/19.jpg" alt=""></a>
+                    <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
                     <div class="post-inside-content">
-                        <div class="category-tag"><a href="#" class="green-bg">Fashion</a></div>
-                        <h2><a href="#">Morbi leo lorem, cursus quis</a></h2>
+                        <div class="category-tag"><a href="#" class="@item.Category.Color">@item.Category.Name</a></div>
+                        <h2><a href="#">@item.Tittle</a></h2>
                         <div class="post-meta">
-                            <a href="#" class="author">Ridoy</a>
-                            <a href="#" class="date">September 4, 2019</a>
+                            <a href="#" class="author">@item.Author.Name</a>
+                            <a href="#" class="date">@item.Date.ToString("MMMM dd,yyy")</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                <div class="single-post">
-                    <a href="#"><img src="~/Public/images/post/3.jpg" alt=""></a>
-                    <div class="post-inside-content">
-                        <div class="category-tag"><a href="#" class="blue-bg">Nature</a></div>
-                        <h2><a href="#">Ellentesque ultricies ullamcorper magna</a></h2>
-                        <div class="post-meta">
-                            <a href="#" class="author">Ridoy</a>
-                            <a href="#" class="date">September 4, 2019</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
+            
+            
+            
         </div>
         <div class="row">
+    @foreach (var item in Model.News.Skip(3).Take(4))
+    {
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                 <div class="single-post">
-                    <a href="#"><img src="~/Public/images/post/17.jpg" alt=""></a>
+                    <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
                     <div class="post-inside-content">
-                        <div class="category-tag"><a href="#" class="primary-bg">Food</a></div>
-                        <h2><a href="#">Nulla eget enim eget mauris aliquam</a></h2>
+                        <div class="category-tag"><a href="#" class="@item.Category.Color">@item.Category.Name</a></div>
+                        <h2><a href="#">@item.Tittle</a></h2>
                         <div class="post-meta">
-                            <a href="#" class="author">Ridoy</a>
-                            <a href="#" class="date">September 4, 2019</a>
+                            <a href="#" class="author">@item.Author.Name</a>
+                            <a href="#" class="date">@item.Date.ToString("MMMM dd,yyy")</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                <div class="single-post">
-                    <a href="#"><img src="~/Public/images/post/24.jpg" alt=""></a>
-                    <div class="post-inside-content">
-                        <div class="category-tag"><a href="#" class="mint-bg">Football</a></div>
-                        <h2><a href="#">Quisque sed ex egestas, dignissim</a></h2>
-                        <div class="post-meta">
-                            <a href="#" class="author">Ridoy</a>
-                            <a href="#" class="date">September 4, 2019</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                <div class="single-post">
-                    <a href="#"><img src="~/Public/images/post/11.jpg" alt=""></a>
-                    <div class="post-inside-content">
-                        <div class="category-tag"><a href="#" class="yellow-bg">Music</a></div>
-                        <h2><a href="#">Nam suscipit luctus ante, vel iaculis</a></h2>
-                        <div class="post-meta">
-                            <a href="#" class="author">Ridoy</a>
-                            <a href="#" class="date">September 4, 2019</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @*<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                <div class="single-post">
-                    <a href="#"><img src="~/Public/images/post/23.jpg" alt=""></a>
-                    <div class="post-inside-content">
-                        <div class="category-tag"><a href="#" class="blue-bg-2">Politics</a></div>
-                        <h2><a href="#">Proin non arcu lacus. Etiam est quam</a></h2>
-                        <div class="post-meta">
-                            <a href="#" class="author">Ridoy</a>
-                            <a href="#" class="date">September 4, 2019</a>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
+    }
+            
+     
+
+            
+          
+            
+            
         </div>
     </div>
 </section><!--Hero Section-->
@@ -121,59 +72,40 @@
                         </div>
                     </div>
                     <div class="col-xl-12">
+                        
                         <div class="row single-post-2">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <a href="#"><img src="~/Public/images/post/18.jpg" alt=""></a>
+                                <a href="#"><img src="~/Public/images/post/@Model.NewsItem.Photo" alt=""></a>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="primary-bg">Modelling</a></div>
-                                    <h2><a href="#">Impressive business got raised</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
+                                    <div class="category-tag"><a href="#" class="primary-bg">@Model.NewsItem.Category.Name</a></div>
+                                    <h2><a href="#">@Model.NewsItem.Tittle</a></h2>
+                                    <p>@Model.NewsItem.Description</p>
                                     <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
+                                        <a href="#" class="author">@Model.NewsItem.Author.Name</a>
+                                        <a href="#" class="date">@Model.NewsItem.Date.ToString("MMMM dd,yyy")</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                        <div class="single-post-2">
-                            <a href="#"><img src="~/Public/images/post/19.jpg" alt=""></a>
-                            <div class="post-inside-content">
-                                <h2><a href="#">Impressive business got raised</a></h2>
-                                <div class="post-meta">
-                                    <a href="#" class="author">Ridoy</a>
-                                    <a href="#" class="date">September 4, 2019</a>
-                                </div>
+                    @foreach (var item in Model.News.OrderByDescending(m=>m.CategoryId==2).Take(3))
+                    {
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-post-2">
+                        <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
+                        <div class="post-inside-content">
+                            <h2><a href="#">@item.Tittle</a></h2>
+                            <div class="post-meta">
+                                <a href="#" class="author">@item.Author.Name</a>
+                                <a href="#" class="date">@item.Date.ToString("MMMM dd,yyy")<a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                        <div class="single-post-2">
-                            <a href="#"><img src="~/Public/images/post/1.jpg" alt=""></a>
-                            <div class="post-inside-content">
-                                <h2><a href="#">Impressive business got raised</a></h2>
-                                <div class="post-meta">
-                                    <a href="#" class="author">Ridoy</a>
-                                    <a href="#" class="date">September 4, 2019</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                        <div class="single-post-2">
-                            <a href="#"><img src="~/Public/images/post/9.jpg" alt=""></a>
-                            <div class="post-inside-content">
-                                <h2><a href="#">Impressive business got raised</a></h2>
-                                <div class="post-meta">
-                                    <a href="#" class="author">Ridoy</a>
-                                    <a href="#" class="date">September 4, 2019</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                    }
+                    
                 </div>
 
 
@@ -186,100 +118,41 @@
                 </div>
 
                 <div class="post-carousel owl-carousel mb-30">
+                
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="single-post">
-                                <a href="#"><img src="~/Public/images/post/4.jpg" alt=""></a>
+                                <a href="#"><img src="~/Public/images/post/@Model.OneSlider.Photo" alt=""></a>
                                 <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="green-bg">News</a></div>
-                                    <h2><a href="#">Impressive business got raised</a></h2>
+                                    <div class="category-tag"><a href="#" class="@Model.OneSlider.Category.Color">@Model.OneSlider.Category.Name</a></div>
+                                    <h2><a href="#">@Model.OneSlider.Tittle</a></h2>
                                     <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
+                                        <a href="#" class="author">@Model.OneSlider.Author.Name</a>
+                                        <a href="#" class="date">@Model.OneSlider.Date.ToString("MMMM dd,yyy")</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-list-post">
-                                <div class="list-post-img">
-                                    <a href="#"><img src="~/Public/images/post/5.jpg" alt=""></a>
-                                </div>
-                                <div class="list-post-content">
-                                    <a href="#" class="cl-mint">Sports</a>
-                                    <h4><a href="#">See the live on the field the live on the</a></h4>
-                                    <div class="post-date">September 4, 2019</div>
-                                </div>
-                            </div>
-                            <div class="single-list-post">
-                                <div class="list-post-img">
-                                    <a href="#"><img src="~/Public/images/post/1.jpg" alt=""></a>
-                                </div>
-                                <div class="list-post-content">
-                                    <a href="#" class="cl-green">Athletes</a>
-                                    <h4><a href="#">See the live on the field the live on the</a></h4>
-                                    <div class="post-date">September 4, 2019</div>
-                                </div>
-                            </div>
-                            <div class="single-list-post">
-                                <div class="list-post-img">
-                                    <a href="#"><img src="~/Public/images/post/2.jpg" alt=""></a>
-                                </div>
-                                <div class="list-post-content">
-                                    <a href="#" class="cl-primary">Culture</a>
-                                    <h4><a href="#">See the live on the field the live on the</a></h4>
-                                    <div class="post-date">September 4, 2019</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-post">
-                                <a href="#"><img src="~/Public/images/post/3.jpg" alt=""></a>
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="primary-bg">News</a></div>
-                                    <h2><a href="#">Impressive business got raised</a></h2>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
+                            @foreach (var item in Model.News.OrderByDescending(n => n.CategoryId==9).Take(3))
+                            {
+                                <div class="single-list-post">
+                                    <div class="list-post-img">
+                                        <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
+                                    </div>
+                                    <div class="list-post-content">
+                                        <a href="#" class="cl-green">@item.Category.Name</a>
+                                        <h4><a href="#">@item.Tittle</a></h4>
+                                        <div class="post-date">@item.Date.ToString("MMMM dd,yyy")</div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="single-list-post">
-                                <div class="list-post-img">
-                                    <a href="#"><img src="~/Public/images/post/5.jpg" alt=""></a>
-                                </div>
-                                <div class="list-post-content">
-                                    <a href="#" class="cl-mint">Athletes</a>
-                                    <h4><a href="#">See the live on the field the live on the</a></h4>
-                                    <div class="post-date">September 4, 2019</div>
-                                </div>
-                            </div>
-                            <div class="single-list-post">
-                                <div class="list-post-img">
-                                    <a href="#"><img src="~/Public/images/post/6.jpg" alt=""></a>
-                                </div>
-                                <div class="list-post-content">
-                                    <a href="#" class="cl-green">Athletes</a>
-                                    <h4><a href="#">See the live on the field the live on the</a></h4>
-                                    <div class="post-date">September 4, 2019</div>
-                                </div>
-                            </div>
-                            <div class="single-list-post">
-                                <div class="list-post-img">
-                                    <a href="#"><img src="~/Public/images/post/7.jpg" alt=""></a>
-                                </div>
-                                <div class="list-post-content">
-                                    <a href="#" class="cl-primary">Athletes</a>
-                                    <h4><a href="#">See the live on the field the live on the</a></h4>
-                                    <div class="post-date">September 4, 2019</div>
-                                </div>
-                            </div>
+                            }
+
                         </div>
                     </div>
+                   
+                    
+                    
                 </div>
 
                 <div class="row mb-30">

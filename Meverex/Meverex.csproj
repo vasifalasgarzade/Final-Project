@@ -137,6 +137,18 @@
     <Compile Include="Migrations\202001271612187_init.Designer.cs">
       <DependentUpon>202001271612187_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002050951579_CreateAllmodels.cs" />
+    <Compile Include="Migrations\202002050951579_CreateAllmodels.Designer.cs">
+      <DependentUpon>202002050951579_CreateAllmodels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002051022232_AddColumnToNewsModels.cs" />
+    <Compile Include="Migrations\202002051022232_AddColumnToNewsModels.Designer.cs">
+      <DependentUpon>202002051022232_AddColumnToNewsModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002051121106_addcolumntocategory.cs" />
+    <Compile Include="Migrations\202002051121106_addcolumntocategory.Designer.cs">
+      <DependentUpon>202002051121106_addcolumntocategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Category.cs" />
@@ -150,6 +162,7 @@
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\Texnology.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -277,7 +290,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
@@ -305,6 +317,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001271612187_init.resx">
       <DependentUpon>202001271612187_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002050951579_CreateAllmodels.resx">
+      <DependentUpon>202002050951579_CreateAllmodels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002051022232_AddColumnToNewsModels.resx">
+      <DependentUpon>202002051022232_AddColumnToNewsModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002051121106_addcolumntocategory.resx">
+      <DependentUpon>202002051121106_addcolumntocategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

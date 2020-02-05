@@ -26,6 +26,7 @@ namespace Meverex.Models
 
         [Required]
         public bool Status { get; set; }
+      
 
     }
 }
