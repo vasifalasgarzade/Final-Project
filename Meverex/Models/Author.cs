@@ -11,6 +11,11 @@ namespace Meverex.Models
         public string Name { get; set; }
       
         public List<News> News { get; set; }
-       
+        public List<FashionItem> FashionItems { get; set; }
+        public List<PopularNews> PopularNews { get; set; }
+        public List<Politic> Politics { get; set; }
+
+
+
     }
 }

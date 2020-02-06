@@ -14,12 +14,18 @@ namespace Meverex.Controllers
             HomeViewModel model = new HomeViewModel
             {
                 News = _context.News.OrderByDescending(n => n.Id).Take(7).ToList(),
-                NewsItem = _context.News.FirstOrDefault(n=>n.CategoryId==8),
-                OneSlider= _context.News.FirstOrDefault(one=>one.CategoryId==1),
+                FashionItem = _context.FashionItems.FirstOrDefault(),
+                FashionItems = _context.FashionItems.OrderByDescending(f=>f.Id).Take(3).ToList(),
+                PopularNews = _context.PopularNews.Take(2).FirstOrDefault(),
+                Populars = _context.PopularNews.OrderByDescending(p => p.Id).Take(3).ToList(),
                 Authors = _context.Authors.ToList(),
-                Categories = _context.Categories.ToList()
+                Categories = _context.Categories.ToList(),
+                Politics = _context.Politics.OrderByDescending(p => p.Id).Take(2).ToList(),
+                Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList()
 
-                
+
+
+
 
             };
             return View(model);

@@ -9,10 +9,15 @@ namespace Meverex.ViewModels
     public class HomeViewModel
     {
         public List<News> News { get; set; }
-        public News NewsItem { get; set; }
-        public News OneSlider { get; set; }
+        public FashionItem FashionItem { get; set; }
+        public List<FashionItem> FashionItems { get; set; }
+        public PopularNews PopularNews { get; set; }
+        public List<PopularNews> Populars { get; set; }
         public List<Author> Authors { get; set; }
         public List<Category> Categories { get; set; }
+        public List<Politic> Politics { get; set; }
+        public List<Slider> Sliders { get; set; }
+
 
     }
 }

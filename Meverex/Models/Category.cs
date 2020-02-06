@@ -12,8 +12,8 @@ namespace Meverex.Models
         public string Color { get; set; }
 
 
-
-
+        public List<PopularNews> Populars { get; set; }
+        public List<FashionItem> FashionItems { get; set; }
         public List<News> News { get; set; }
     }
 }

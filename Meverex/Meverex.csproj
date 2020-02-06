@@ -149,10 +149,34 @@
     <Compile Include="Migrations\202002051121106_addcolumntocategory.Designer.cs">
       <DependentUpon>202002051121106_addcolumntocategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002051949153_fahsionitemsmodelcreate.cs" />
+    <Compile Include="Migrations\202002051949153_fahsionitemsmodelcreate.Designer.cs">
+      <DependentUpon>202002051949153_fahsionitemsmodelcreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002061325597_fashionitemsrealtionsnewsmodels.cs" />
+    <Compile Include="Migrations\202002061325597_fashionitemsrealtionsnewsmodels.Designer.cs">
+      <DependentUpon>202002061325597_fashionitemsrealtionsnewsmodels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002061351456_createtablepopularsnews.cs" />
+    <Compile Include="Migrations\202002061351456_createtablepopularsnews.Designer.cs">
+      <DependentUpon>202002061351456_createtablepopularsnews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002061519364_createmodelspolitic.cs" />
+    <Compile Include="Migrations\202002061519364_createmodelspolitic.Designer.cs">
+      <DependentUpon>202002061519364_createmodelspolitic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002061606003_slidermodelscreateat.cs" />
+    <Compile Include="Migrations\202002061606003_slidermodelscreateat.Designer.cs">
+      <DependentUpon>202002061606003_slidermodelscreateat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\FashionItem.cs" />
     <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Politic.cs" />
+    <Compile Include="Models\PopularNews.cs" />
+    <Compile Include="Models\Slider.cs" />
     <Compile Include="Models\SocialLink.cs" />
     <Compile Include="Controllers\TexnologyController.cs" />
     <Compile Include="Data\FinalDbMeverex.cs" />
@@ -326,6 +350,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002051121106_addcolumntocategory.resx">
       <DependentUpon>202002051121106_addcolumntocategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002051949153_fahsionitemsmodelcreate.resx">
+      <DependentUpon>202002051949153_fahsionitemsmodelcreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002061325597_fashionitemsrealtionsnewsmodels.resx">
+      <DependentUpon>202002061325597_fashionitemsrealtionsnewsmodels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002061351456_createtablepopularsnews.resx">
+      <DependentUpon>202002061351456_createtablepopularsnews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002061519364_createmodelspolitic.resx">
+      <DependentUpon>202002061519364_createmodelspolitic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002061606003_slidermodelscreateat.resx">
+      <DependentUpon>202002061606003_slidermodelscreateat.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

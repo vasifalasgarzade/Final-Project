@@ -83,3 +83,8 @@ C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.csproj.GenerateRe
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.CreateAllmodels.resources
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.AddColumnToNewsModels.resources
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.addcolumntocategory.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.fahsionitemsmodelcreate.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.fashionitemsrealtionsnewsmodels.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createtablepopularsnews.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createmodelspolitic.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.slidermodelscreateat.resources

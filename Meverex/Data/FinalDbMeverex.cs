@@ -18,6 +18,10 @@ namespace Meverex.Data
         public DbSet<Author> Authors { get; set; }
         public DbSet<News> News { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<FashionItem> FashionItems { get; set; }
+        public DbSet<PopularNews> PopularNews { get; set; }
+        public DbSet<Politic> Politics { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
     }
   
 }

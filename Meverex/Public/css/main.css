@@ -1970,20 +1970,21 @@ Hero Area
     width: 100%;
 }
 
-.single-post-2 a i {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 10px;
-    height: 40px;
-    width: 40px;
-    line-height: 38px;
-    color: #ffffff;
-    text-align: center;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    transition: 0.4s;
-}
+    .single-post-2 a i {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 10px;
+        height: 40px;
+        width: 40px;
+        line-height: 38px;
+        color: #ffffff;
+        text-align: center;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        transition: 0.4s;
+       
+    }
 
 .single-post-2 a:hover i {
     color: #F5214A;
