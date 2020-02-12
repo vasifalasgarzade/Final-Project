@@ -1,4 +1,5 @@
-﻿ <!--Breadcrumb-->
+﻿ @model NewsViewModel
+    <!--Breadcrumb-->
 <section class="breadcrumb-section gray-bg-2">
     <div class="container">
         <div class="row">
@@ -22,118 +23,27 @@
             <div class="col-xl-8 col-lg-8 col-md-6 col-sm-6">
                 <div class="row">
                     <div class="col-xl-12">
+                        @foreach (var item in Model.News.)
+                        {
                         <div class="row single-post-2">
                             <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/sports/1.jpg" alt=""></a>
+                                <a href="#"><img src="~/Public/images/category/sports/@item.Photo" alt=""></a>
                             </div>
                             <div class="col-xl-6">
                                 <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="primary-bg">Sports</a></div>
-                                    <h2><a href="#">Unknown printer took a galley of type</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
+                                    <div class="category-tag"><a href="#" class="@item.Category.Color">@item.Category.Name</a></div>
+                                    <h2><a href="#">@item.Tittle</a></h2>
+                                    <p>@item.Description</p>
                                     <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
+                                        <a href="#" class="author">@item.Author.Name</a>
+                                        <a href="#" class="date">@item.Date.ToString("MMM dd,yyy")</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/sports/2.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="green-bg">Football</a></div>
-                                    <h2><a href="#">Established fact that a reader</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/sports/3.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="blue-bg">Sports</a></div>
-                                    <h2><a href="#">There are many variations of passages</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/sports/4.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="yellow-bg">Football</a></div>
-                                    <h2><a href="#">If you are going to use a passage of</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/sports/5.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="mint-bg">Entertaiment</a></div>
-                                    <h2><a href="#">Hampden-Sydney College in Virginia</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/sports/6.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="primary-bg">Politics</a></div>
-                                    <h2><a href="#">Finibus Bonorum et Malorum</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/sports/7.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="blue-bg">Business</a></div>
-                                    <h2><a href="#">Richard McClintock, a Latin professor</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        }
+                        
+                       
                     </div>
                 </div>
 

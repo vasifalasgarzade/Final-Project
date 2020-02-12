@@ -21,7 +21,9 @@ namespace Meverex.Controllers
                 Authors = _context.Authors.ToList(),
                 Categories = _context.Categories.ToList(),
                 Politics = _context.Politics.OrderByDescending(p => p.Id).Take(2).ToList(),
-                Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList()
+                Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList(),
+                MostViews = _context.MostViews.OrderByDescending(p => p.Id).Take(2).ToList(),
+                MoreNews = _context.MoreNews.OrderByDescending(p => p.Id).Take(5).ToList()
 
 
 

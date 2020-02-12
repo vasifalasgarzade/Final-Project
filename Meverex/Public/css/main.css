@@ -2253,6 +2253,10 @@ Hero Area
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+  align-items:center;
+   
 }
 
 .thumbnail-post::before {

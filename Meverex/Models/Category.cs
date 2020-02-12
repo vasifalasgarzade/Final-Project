@@ -15,5 +15,6 @@ namespace Meverex.Models
         public List<PopularNews> Populars { get; set; }
         public List<FashionItem> FashionItems { get; set; }
         public List<News> News { get; set; }
+        public List<Sport> Sports { get; set; }
     }
 }

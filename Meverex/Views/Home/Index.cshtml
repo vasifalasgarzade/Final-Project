@@ -209,46 +209,31 @@
                     </div>
                 </div>
                 <div class="post-carousel owl-carousel">
+                    @foreach (var item in Model.MostViews)
+                    {
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="row single-post-2">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                    <a href="#"><img src="~/Public/images/post/8.jpg" alt=""></a>
+                                    <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                     <div class="post-inside-content">
-                                        <div class="category-tag"><a href="#" class="primary-bg">Sports</a></div>
-                                        <h2><a href="#">Impressive business got raised</a></h2>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
+                                        <div class="category-tag"><a href="#" class="@item.Category.Color">@item.Category.Name</a></div>
+                                        <h2><a href="#">@item.Tittle</a></h2>
+                                        <p> @item.Description</p>
                                         <div class="post-meta">
-                                            <a href="#" class="author">Ridoy</a>
-                                            <a href="#" class="date">September 4, 2019</a>
+                                            <a href="#" class="author">@item.Author.Name</a>
+                                            <a href="#" class="date">@item.Date.ToString("MMMM dd,yyy")</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="row single-post-2">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                    <a href="#"><img src="~/Public/images/post/2.jpg" alt=""></a>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                    <div class="post-inside-content">
-                                        <div class="category-tag"><a href="#" class="green-bg">Sports</a></div>
-                                        <h2><a href="#">Impressive business got raised</a></h2>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                        <div class="post-meta">
-                                            <a href="#" class="author">Ridoy</a>
-                                            <a href="#" class="date">September 4, 2019</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    }
+                    
+                    
                 </div>
 
                 <div class="row">
@@ -258,61 +243,22 @@
                         </div>
                     </div>
                     <div class="col-xl-12">
+                        @foreach (var item in Model.MoreNews)
+                        {
                         <div class="single-post-3">
                             <div class="list-post-img">
-                                <img src="~/Public/images/post/5.jpg" alt="">
-                                <a class="tag yellow-bg" href="#">Business</a>
+                                <img src="~/Public/images/post/@item.Photo" alt="">
+                                <a class="tag  @item.Category.Color" href="#">@item.Category.Name</a>
                             </div>
                             <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
+                                <h4><a href="#">@item.Tittle</a></h4>
+                                <p>@item.Description</p>
+                                <div class="post-date">@item.Date.ToString("MMMM dd,yyy")</div>
                             </div>
                         </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/7.jpg" alt="">
-                                <a class="tag blue-bg" href="#">Athletes</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/9.jpg" alt="">
-                                <a class="tag green-bg" href="#">Sports</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/2.jpg" alt="">
-                                <a class="tag primary-bg" href="#">nature</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/1.jpg" alt="">
-                                <a class="tag mint-bg" href="#">nature</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
+                        }
+
+                        
                     </div>
                     <div class="col-xl-12 centered">
                         <a class="bttn-mid btn-emt w-100" href="#">Load more</a>
@@ -333,124 +279,9 @@
                         Html.RenderPartial("~/Views/Shared/_Sociallink.cshtml");
                     }
 
-                    <div class="single-sidebar">
-                        <div class="section-title">
-                            <h3><a href="#">News</a></h3>
-                        </div>
-                        <div class="sidebar-content">
-                            <ul class="nav nav-pills mb-3" id="pills-tab2" role="tablist">
-                                <li>
-                                    <a class="active" id="popular-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Popular</a>
-                                </li>
-                                <li>
-                                    <a id="recent-tab" data-toggle="pill" href="#recent" role="tab" aria-controls="recent" aria-selected="false">Recent</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="pills-tabContent2">
-                                <div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="popular-tab">
-                                    <div class="single-list-post">
-                                        <div class="list-post-img">
-                                            <a href="#"><img src="~/Public/images/post/9.jpg" alt=""></a>
-                                        </div>
-                                        <div class="list-post-content">
-                                            <a href="#">Athletes</a>
-                                            <h4><a href="#">See the live on the field the live on the</a></h4>
-                                            <div class="post-date">September 4, 2019</div>
-                                        </div>
-                                    </div>
-                                    <div class="single-list-post">
-                                        <div class="list-post-img">
-                                            <a href="#"><img src="~/Public/images/post/8.jpg" alt=""></a>
-                                        </div>
-                                        <div class="list-post-content">
-                                            <a href="#">Athletes</a>
-                                            <h4><a href="#">See the live on the field the live on the</a></h4>
-                                            <div class="post-date">September 4, 2019</div>
-                                        </div>
-                                    </div>
-                                    <div class="single-list-post">
-                                        <div class="list-post-img">
-                                            <a href="#"><img src="~/Public/images/post/7.jpg" alt=""></a>
-                                        </div>
-                                        <div class="list-post-content">
-                                            <a href="#">Athletes</a>
-                                            <h4><a href="#">See the live on the field the live on the</a></h4>
-                                            <div class="post-date">September 4, 2019</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="recent" role="tabpanel" aria-labelledby="recent-tab">
-                                    <div class="single-list-post">
-                                        <div class="list-post-img">
-                                            <a href="#"><img src="~/Public/images/post/1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="list-post-content">
-                                            <a href="#">Athletes</a>
-                                            <h4><a href="#">See the live on the field the live on the</a></h4>
-                                            <div class="post-date">September 4, 2019</div>
-                                        </div>
-                                    </div>
-                                    <div class="single-list-post">
-                                        <div class="list-post-img">
-                                            <a href="#"><img src="~/Public/images/post/2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="list-post-content">
-                                            <a href="#">Athletes</a>
-                                            <h4><a href="#">See the live on the field the live on the</a></h4>
-                                            <div class="post-date">September 4, 2019</div>
-                                        </div>
-                                    </div>
-                                    <div class="single-list-post">
-                                        <div class="list-post-img">
-                                            <a href="#"><img src="~/Public/images/post/3.jpg" alt=""></a>
-                                        </div>
-                                        <div class="list-post-content">
-                                            <a href="#">Athletes</a>
-                                            <h4><a href="#">See the live on the field the live on the</a></h4>
-                                            <div class="post-date">September 4, 2019</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-sidebar">
-                        <div class="section-title">
-                            <h3>instagram feed</h3>
-                        </div>
-                        <div class="sidebar-content">
-                            <div class="row instagram-feed">
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                    <a href="#"><img src="~/Public/images/instagram/1.jpg" alt=""></a>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                    <a href="#"><img src="~/Public/images/instagram/2.jpg" alt=""></a>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                    <a href="#"><img src="~/Public/images/instagram/3.jpg" alt=""></a>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                    <a href="#"><img src="~/Public/images/instagram/4.jpg" alt=""></a>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                    <a href="#"><img src="~/Public/images/instagram/5.jpg" alt=""></a>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                    <a href="#"><img src="~/Public/images/instagram/6.jpg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="newslatter">
-                        <i class="fa fa-paper-plane-o"></i>
-                        <h3>Get more update</h3>
-                        <h5>Subscribe to our mailing list to get the new updates!</h5>
-                        <form action="#">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit" class="bttn-mid btn-fill">Subscribe</button>
-                        </form>
-                        <p>We won't send you spam</p>
-                    </div>
+                 
+                  
+                   
                 </aside>
             </div>
         </div>
@@ -462,61 +293,22 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="full-carousel owl-carousel">
+                    @foreach (var item in Model.News.Take(5))
+                    {
                     <div class="single-post">
-                        <a href="#"><img src="~/Public/images/post/5.jpg" alt=""></a>
+                        <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
                         <div class="post-inside-content">
-                            <div class="category-tag"><a href="#" class="primary-bg">Business</a></div>
-                            <h2><a href="#">Impressive business got raised</a></h2>
+                            <div class="category-tag"><a href="#" class="@item.Category.Color">@item.Category.Name</a></div>
+                            <h2><a href="#">@item.Tittle</a></h2>
                             <div class="post-meta">
-                                <a href="#" class="author">Ridoy</a>
-                                <a href="#" class="date">September 4, 2019</a>
+                                <a href="#" class="author">@item.Author.Name</a>
+                                <a href="#" class="date">@item.Date.ToString("MMM dd,yyy")</a>
                             </div>
                         </div>
                     </div>
-                    <div class="single-post">
-                        <a href="#"><img src="~/Public/images/post/4.jpg" alt=""></a>
-                        <div class="post-inside-content">
-                            <div class="category-tag"><a href="#" class="yellow-bg">World Politics</a></div>
-                            <h2><a href="#">Impressive business got raised</a></h2>
-                            <div class="post-meta">
-                                <a href="#" class="author">Ridoy</a>
-                                <a href="#" class="date">September 4, 2019</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-post">
-                        <a href="#"><img src="~/Public/images/post/3.jpg" alt=""></a>
-                        <div class="post-inside-content">
-                            <div class="category-tag"><a href="#" class="mint-bg">Entertaiment</a></div>
-                            <h2><a href="#">Impressive business got raised</a></h2>
-                            <div class="post-meta">
-                                <a href="#" class="author">Ridoy</a>
-                                <a href="#" class="date">September 4, 2019</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-post">
-                        <a href="#"><img src="~/Public/images/post/2.jpg" alt=""></a>
-                        <div class="post-inside-content">
-                            <div class="category-tag"><a href="#" class="blue-bg">Entertaiment</a></div>
-                            <h2><a href="#">Impressive business got raised</a></h2>
-                            <div class="post-meta">
-                                <a href="#" class="author">Ridoy</a>
-                                <a href="#" class="date">September 4, 2019</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-post">
-                        <a href="#"><img src="~/Public/images/post/1.jpg" alt=""></a>
-                        <div class="post-inside-content">
-                            <div class="category-tag"><a href="#" class="green-bg">Science</a></div>
-                            <h2><a href="#">Impressive business got raised</a></h2>
-                            <div class="post-meta">
-                                <a href="#" class="author">Ridoy</a>
-                                <a href="#" class="date">September 4, 2019</a>
-                            </div>
-                        </div>
-                    </div>
+                    }
+                    
+                    
                 </div>
             </div>
         </div>
@@ -527,78 +319,26 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-4">
-                <div class="site-sidebar">
-                    <div class="single-sidebar">
-                        <div class="section-title">
-                            <h3><a href="#">Quick link</a></h3>
-                        </div>
-                        <div class="single-quick-link">
-                            <div class="category-tag">
-                                <a href="#" class="cl-green">Sports</a>
-                            </div>
-                            <h4><a href="#">Let's start playing football togather in that field It is a long established fact</a></h4>
-                        </div>
-                        <div class="single-quick-link">
-                            <div class="category-tag">
-                                <a href="#" class="cl-mint">Technology</a>
-                            </div>
-                            <h4><a href="#">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</a></h4>
-                        </div>
-                        <div class="single-quick-link">
-                            <div class="category-tag">
-                                <a href="#" class="cl-blue">Politics</a>
-                            </div>
-                            <h4><a href="#">There are many variations of passages of Lorem Ipsum available</a></h4>
-                        </div>
-                        <div class="single-quick-link">
-                            <div class="category-tag">
-                                <a href="#" class="cl-primary">Entertaiment</a>
-                            </div>
-                            <h4><a href="#">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't</a></h4>
-                        </div>
-                    </div>
-                </div>
+                @{
+                    Html.RenderPartial("~/Views/Shared/_QuikLink.cshtml");
+
+                }
             </div>
-            <div class="col-xl-4">
-                <div class="thumbnail-post" style="background: url('assets/images/post/3.jpg') no-repeat center / cover;">
+            <div class="col-xl-8">
+                @foreach (var item in Model.News.Take(3))
+                {
+                <div class="thumbnail-post " style="background-image:url('/Public/images/post/@item.Photo')  ">
                     <div class="category-tag">
-                        <a href="#" class="cl-yellow">Nature</a>
+                        <a href="#" class="cl-yellow">@item.Category.Name</a>
                     </div>
-                    <h3><a href="#">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't</a></h3>
+                    <h3><a href="#">@item.Description</a></h3>
                 </div>
-                <div class="thumbnail-post" style="background: url('assets/images/post/10.jpg') no-repeat center / cover;">
-                    <div class="category-tag">
-                        <a href="#" class="cl-mint">Entertainment</a>
-                    </div>
-                    <h3><a href="#">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't</a></h3>
-                </div>
-                <div class="thumbnail-post" style="background: url('assets/images/post/7.jpg') no-repeat center / cover;">
-                    <div class="category-tag">
-                        <a href="#" class="cl-green">Sports</a>
-                    </div>
-                    <h3><a href="#">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't</a></h3>
-                </div>
+                }
+                
+               
+                
             </div>
-            <div class="col-xl-4">
-                <div class="thumbnail-post" style="background: url('assets/images/post/11.jpg') no-repeat center / cover;">
-                    <div class="category-tag">
-                        <a href="#" class="cl-blue-2">Entertainment</a>
-                    </div>
-                    <h3><a href="#">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't</a></h3>
-                </div>
-                <div class="thumbnail-post" style="background: url('assets/images/post/12.jpg') no-repeat center / cover;">
-                    <div class="category-tag">
-                        <a href="#" class="cl-white">Science</a>
-                    </div>
-                    <h3><a href="#">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't</a></h3>
-                </div>
-                <div class="thumbnail-post" style="background: url('assets/images/post/13.jpg') no-repeat center / cover;">
-                    <div class="category-tag">
-                        <a href="#" class="cl-yellow">Technology</a>
-                    </div>
-                    <h3><a href="#">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't</a></h3>
-                </div>
-            </div>
+           
         </div>
       @{ 
           Html.RenderPartial("~/Views/Shared/_Slider.cshtml",model:Model.Sliders);

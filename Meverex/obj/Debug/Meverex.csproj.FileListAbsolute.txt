@@ -88,3 +88,7 @@ C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.fashio
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createtablepopularsnews.resources
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createmodelspolitic.resources
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.slidermodelscreateat.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createtablemostview.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createtablemorenew.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.updateauthormodels.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.updatemodelscreatemodelsport.resources

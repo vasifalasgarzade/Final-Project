@@ -25,15 +25,14 @@ namespace Meverex.Models
         public HttpPostedFileBase PhotoUpload { get; set; }
         public int AuthorId { get; set; }
         public int CategoryId { get; set; }
-        public int FashionId { get; set; }
-        public int PopularId { get; set; }
+      
 
 
 
-        public PopularNews PopularNews { get; set; }
-        public FashionItem FashionItem { get; set; }
+      
         public Category Category { get; set; }
         public Author Author { get; set; }
+        
 
 
 

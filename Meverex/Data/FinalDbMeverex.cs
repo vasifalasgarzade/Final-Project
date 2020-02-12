@@ -22,6 +22,8 @@ namespace Meverex.Data
         public DbSet<PopularNews> PopularNews { get; set; }
         public DbSet<Politic> Politics { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<MostView> MostViews { get; set; }
+        public DbSet<MoreNew> MoreNews { get; set; }
     }
   
 }

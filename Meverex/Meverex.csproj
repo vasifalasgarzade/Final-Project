@@ -169,10 +169,28 @@
     <Compile Include="Migrations\202002061606003_slidermodelscreateat.Designer.cs">
       <DependentUpon>202002061606003_slidermodelscreateat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002121208236_createtablemostview.cs" />
+    <Compile Include="Migrations\202002121208236_createtablemostview.Designer.cs">
+      <DependentUpon>202002121208236_createtablemostview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002121232281_createtablemorenew.cs" />
+    <Compile Include="Migrations\202002121232281_createtablemorenew.Designer.cs">
+      <DependentUpon>202002121232281_createtablemorenew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002121506208_updateauthormodels.cs" />
+    <Compile Include="Migrations\202002121506208_updateauthormodels.Designer.cs">
+      <DependentUpon>202002121506208_updateauthormodels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002121600045_updatemodelscreatemodelsport.cs" />
+    <Compile Include="Migrations\202002121600045_updatemodelscreatemodelsport.Designer.cs">
+      <DependentUpon>202002121600045_updatemodelscreatemodelsport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\FashionItem.cs" />
+    <Compile Include="Models\MoreNew.cs" />
+    <Compile Include="Models\MostView.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Politic.cs" />
     <Compile Include="Models\PopularNews.cs" />
@@ -184,9 +202,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\Sport.cs" />
     <Compile Include="Models\Texnology.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\NewsViewModel.cs" />
+    <Compile Include="ViewModels\TexnologyViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -365,6 +386,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002061606003_slidermodelscreateat.resx">
       <DependentUpon>202002061606003_slidermodelscreateat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002121208236_createtablemostview.resx">
+      <DependentUpon>202002121208236_createtablemostview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002121232281_createtablemorenew.resx">
+      <DependentUpon>202002121232281_createtablemorenew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002121506208_updateauthormodels.resx">
+      <DependentUpon>202002121506208_updateauthormodels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002121600045_updatemodelscreatemodelsport.resx">
+      <DependentUpon>202002121600045_updatemodelscreatemodelsport.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

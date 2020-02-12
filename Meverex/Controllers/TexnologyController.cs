@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.ViewModels;
+
 
 namespace Meverex.Controllers
 {
@@ -11,8 +13,16 @@ namespace Meverex.Controllers
         // GET: Texnology
         public ActionResult Index()
         {
+            TexnologyViewModel model = new TexnologyViewModel
+            {
+                Texnologies = _context.Texnologies.OrderByDescending(t=>t.Id).ToList(),
+                Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList(),
+                Authors = _context.Authors.ToList()
+
+
+            };
             
-            return View(_context.Texnologies.ToList());
+            return View(model);
         }
       
     }

@@ -17,7 +17,8 @@ namespace Meverex.ViewModels
         public List<Category> Categories { get; set; }
         public List<Politic> Politics { get; set; }
         public List<Slider> Sliders { get; set; }
-
+        public List<MostView> MostViews { get; set; }
+        public List<MoreNew> MoreNews { get; set; }
 
     }
 }
