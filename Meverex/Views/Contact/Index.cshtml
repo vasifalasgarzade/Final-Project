@@ -1,4 +1,4 @@
-﻿
+﻿@model ContactViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -26,14 +26,14 @@
         <div class="row justify-content-center">
             <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
                 <div class="page-contents centered">
-                    <h2>Any asking to the team?</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which</p>
+                    <h2>@Model.ContactUs.Tittle</h2>
+                    <p>@Model.ContactUs.Desc</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xl-12 mb-30">
-                <img src="~/Public/images/about.jpg" alt="">
+                <img src="~/Public/images/@Model.ContactUs.Photo" alt="">
             </div>
             <div class="col-xl-6">
                 <div class="contact-form">
@@ -51,16 +51,18 @@
             <div class="col-xl-6">
                 <div class="contact-content">
                     <h4>Contact Details</h4>
-                    <p>130 Hollister Church Rd, Palatka, FL, 32177</p>
-                    <p>745 Old Springville Rd, Springville, TN, 38256</p>
+                    
+                    <p>@Model.ContactUs.Location</p>
                     <h5>Call for emergencies</h5>
-                    <p>+968659564</p>
-                    <p>+56648246563596</p>
+                    
+                    <p>@Model.ContactUs.Number</p>
                     <div class="social">
-                        <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="instagram-bg"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="pinterest-bg"><i class="fa fa-pinterest-p"></i></a>
+                        @foreach (var item in Model.SocialLinks)
+                        {
+                            <a href="@item.Url" class="facebook-bg"><i class="fa fa-@item.Icon"></i></a>
+                        }
+
+
                     </div>
                 </div>
             </div>

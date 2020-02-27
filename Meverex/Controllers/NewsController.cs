@@ -15,10 +15,10 @@ namespace Meverex.Controllers
         {
             NewsViewModel model = new NewsViewModel
             {
-                Texnologies = _context.Texnologies.OrderByDescending(t => t.Id).ToList(),
+               
                 Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList(),
                 Authors = _context.Authors.ToList(),
-               
+               Sports = _context.Sports.OrderByDescending(s=>s.Id).Take(7).ToList(),
                 Categories = _context.Categories.ToList()
 
             };
@@ -26,16 +26,45 @@ namespace Meverex.Controllers
         }
         public ActionResult Fashion()
         {
-            
-            return View();
+
+
+            NewsViewModel model = new NewsViewModel
+            {
+
+                Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList(),
+                Authors = _context.Authors.ToList(),
+                Fashions = _context.Fashions.OrderByDescending(s => s.Id).Take(7).ToList(),
+                Categories = _context.Categories.ToList()
+
+            };
+            return View(model);
         }
         public ActionResult Travel()
         {
-            return View();
+            
+            NewsViewModel model = new NewsViewModel
+            {
+
+                Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList(),
+                Authors = _context.Authors.ToList(),
+                MoreNews = _context.MoreNews.OrderByDescending(p => p.Id).Take(5).ToList(),
+                Categories = _context.Categories.ToList()
+
+            };
+            return View(model);
         }
         public ActionResult Food()
         {
-            return View();
+            NewsViewModel model = new NewsViewModel
+            {
+
+                Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList(),
+                Authors = _context.Authors.ToList(),
+                Foods = _context.Foods.OrderByDescending(f => f.Id).Take(8).ToList(),
+                Categories = _context.Categories.ToList()
+
+            };
+            return View(model);
         }
     }
 }

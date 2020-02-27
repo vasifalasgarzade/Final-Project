@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Models;
 
 namespace Meverex.Controllers
 {
@@ -11,7 +12,8 @@ namespace Meverex.Controllers
         // GET: Gallery
         public ActionResult Index()
         {
-            return View();
+
+            return View(_context.Galleries.OrderByDescending(g=>g.Id).ToList());
         }
     }
 }

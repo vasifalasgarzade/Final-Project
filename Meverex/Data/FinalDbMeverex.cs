@@ -24,6 +24,14 @@ namespace Meverex.Data
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<MostView> MostViews { get; set; }
         public DbSet<MoreNew> MoreNews { get; set; }
+        public DbSet<Sport> Sports { get; set; }
+        public DbSet<Fashion> Fashions { get; set; }
+        public DbSet<Food> Foods { get; set; }
+        public DbSet<AboutUs> AboutUs { get; set; }
+        public DbSet<ContactUs> ContactUs { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Gallery> Galleries { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
   
 }

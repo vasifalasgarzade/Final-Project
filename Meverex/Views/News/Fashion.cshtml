@@ -1,4 +1,5 @@
-﻿<!--Breadcrumb-->
+﻿@model NewsViewModel
+<!--Breadcrumb-->
 <section class="breadcrumb-section gray-bg-2">
     <div class="container">
         <div class="row">
@@ -22,123 +23,27 @@
             <div class="col-xl-8 col-lg-8 col-md-6 col-sm-6">
                 <div class="row">
                     <div class="col-xl-12">
+                        @foreach (var item in Model.Fashions)
+                        {
                         <div class="row single-post-2">
                             <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/fashion/1.jpg" alt=""></a>
+                                <a href="#"><img src="~/Public/images/category/fashion/@item.Photo" alt=""></a>
                             </div>
                             <div class="col-xl-6">
                                 <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="primary-bg">Model</a></div>
-                                    <h2><a href="#">Impressive business got raised</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
+                                    <div class="category-tag"><a href="#" class="@item.Category.Color">@item.Category.Name</a></div>
+                                    <h2><a href="#">@item.Tittle</a></h2>
+                                    <p>@item.Description</p>
                                     <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
+                                        <a href="#" class="author">@item.Author.Name</a>
+                                        <a href="#" class="date">@item.Date.ToString("MMM dd,yyy")</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/fashion/2.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="green-bg">Fashion</a></div>
-                                    <h2><a href="#">Impressive business got raised</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/fashion/3.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="blue-bg">Shoes</a></div>
-                                    <h2><a href="#">Impressive business got raised</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/fashion/4.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="yellow-bg">Model</a></div>
-                                    <h2><a href="#">Impressive business got raised</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/fashion/5.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="mint-bg">Fashion</a></div>
-                                    <h2><a href="#">Impressive business got raised</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/fashion/6.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="primary-bg">Shopping</a></div>
-                                    <h2><a href="#">Impressive business got raised</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-6">
-                                <a href="#"><img src="~/Public/images/category/fashion/7.jpg" alt=""></a>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="post-inside-content">
-                                    <div class="category-tag"><a href="#" class="blue-bg">Model</a></div>
-                                    <h2><a href="#">Impressive business got raised</a></h2>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt blanditiis non culpa accusantium quia corrupti</p>
-                                    <div class="post-meta">
-                                        <a href="#" class="author">Ridoy</a>
-                                        <a href="#" class="date">September 4, 2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row single-post-2">
-                            <div class="col-xl-12">
-                                <a href="#" class="bttn-mid btn-fill w-100 centered">Load More</a>
-                            </div>
-                        </div>
+                        }
+                        
+                        
                     </div>
                 </div>
 
@@ -168,7 +73,7 @@
     <div class="container">
 
         @{
-            Html.RenderPartial("~/Views/Shared/_Slider.cshtml");
+            Html.RenderPartial("~/Views/Shared/_Slider.cshtml",model:Model.Sliders);
         }
     </div>
 </section><!--/Content Section-->

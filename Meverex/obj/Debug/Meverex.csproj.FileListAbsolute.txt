@@ -91,4 +91,11 @@ C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.slider
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createtablemostview.resources
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createtablemorenew.resources
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.updateauthormodels.resources
-C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.updatemodelscreatemodelsport.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createmodelsport.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createmodelfasions.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createtablefoodupdatedata.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.createmodelaboutus.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.CreatePostAndContactModel.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.popstmodelstitleaddcolumn.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.gallerymodelcreate.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.adminmodelscreate.resources

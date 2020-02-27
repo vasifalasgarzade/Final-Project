@@ -17,6 +17,6 @@ namespace Meverex.Models
         public string Description { get; set; }
         public DateTime Date { get; set; }
         public bool Status { get; set; }
-        public List<News> News { get; set; }
+        public virtual ICollection<News> News { get; set; }
     }
 }

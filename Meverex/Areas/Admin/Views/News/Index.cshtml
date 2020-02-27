@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Meverex.Models.News>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <div class="container-fluid">
+        <div class="card-header">
+            <a href="@Url.Action("create")" class="btn btn-outline-primary">New Contact</a>
+        </div>
+        <div class="card-body">
+
+            <table class="table table-bordered">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Author.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Category.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Photo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tittle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Author.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Photo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tittle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("edit",new { id = item.Id })">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+
+                            <a onclick="return confirm('Silinsin?')" href="@Url.Action("delete",new { id = item.Id })" class="text-danger">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            </div>
+        </div>

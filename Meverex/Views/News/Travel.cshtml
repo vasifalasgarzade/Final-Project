@@ -1,4 +1,5 @@
-﻿  <!--Breadcrumb-->
+﻿@model NewsViewModel
+  <!--Breadcrumb-->
 <section class="breadcrumb-section gray-bg-2">
     <div class="container">
         <div class="row">
@@ -22,149 +23,21 @@
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/5.jpg" alt="">
-                                <a class="tag yellow-bg" href="#">Business</a>
+                        @foreach (var item in Model.MoreNews)
+                        {
+                            <div class="single-post-3">
+                                <div class="list-post-img">
+                                    <img src="~/Public/images/post/@item.Photo" alt="">
+                                    <a class="tag  @item.Category.Color" href="#">@item.Category.Name</a>
+                                </div>
+                                <div class="list-post-content">
+                                    <h4><a href="#">@item.Tittle</a></h4>
+                                    <p>@item.Description</p>
+                                    <div class="post-date">@item.Date.ToString("MMMM dd,yyy")</div>
+                                </div>
                             </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/7.jpg" alt="">
-                                <a class="tag blue-bg" href="#">Athletes</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/9.jpg" alt="">
-                                <a class="tag green-bg" href="#">Sports</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/2.jpg" alt="">
-                                <a class="tag primary-bg" href="#">nature</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/1.jpg" alt="">
-                                <a class="tag mint-bg" href="#">nature</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/5.jpg" alt="">
-                                <a class="tag yellow-bg" href="#">Business</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/7.jpg" alt="">
-                                <a class="tag blue-bg" href="#">Athletes</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/9.jpg" alt="">
-                                <a class="tag green-bg" href="#">Sports</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/2.jpg" alt="">
-                                <a class="tag primary-bg" href="#">nature</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/1.jpg" alt="">
-                                <a class="tag mint-bg" href="#">nature</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/5.jpg" alt="">
-                                <a class="tag yellow-bg" href="#">Business</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/7.jpg" alt="">
-                                <a class="tag blue-bg" href="#">Athletes</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
-                        <div class="single-post-3">
-                            <div class="list-post-img">
-                                <img src="~/Public/images/post/9.jpg" alt="">
-                                <a class="tag green-bg" href="#">Sports</a>
-                            </div>
-                            <div class="list-post-content">
-                                <h4><a href="#">See the live on the field the live on the See the live on</a></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor harum ullam maiores, quidem autem perferendis</p>
-                                <div class="post-date">September 4, 2019</div>
-                            </div>
-                        </div>
+                        }
+
                     </div>
                 </div>
 
@@ -193,7 +66,7 @@
     <div class="container">
 
         @{
-            Html.RenderPartial("~/Views/Shared/_Slider.cshtml");
+            Html.RenderPartial("~/Views/Shared/_Slider.cshtml",model:Model.Sliders);
         }
     </div>
 </section><!--/Content Section-->

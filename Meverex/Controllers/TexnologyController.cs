@@ -15,7 +15,7 @@ namespace Meverex.Controllers
         {
             TexnologyViewModel model = new TexnologyViewModel
             {
-                Texnologies = _context.Texnologies.OrderByDescending(t=>t.Id).ToList(),
+                Texnologies = _context.Texnologies.OrderByDescending(t=>t.Id).Take(8).ToList(),
                 Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList(),
                 Authors = _context.Authors.ToList()
 

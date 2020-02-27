@@ -12,6 +12,8 @@ namespace Meverex.Models
         public string FooterLogo { get; set; }
         [Required, MaxLength(200)]
         public string Tiitle { get; set; }
-        
+
+       
+
     }
 }

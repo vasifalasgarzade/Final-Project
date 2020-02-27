@@ -243,6 +243,12 @@ font-family: 'Poppins', sans-serif;
 .cl-blue {
     color: #4843D3;
 }
+.author-comment {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 30px;
+    color: #626262;
+}
 
 .cl-blue-2 {
     color: #23b8ff;

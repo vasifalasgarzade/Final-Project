@@ -25,14 +25,18 @@ namespace Meverex.Models
         public HttpPostedFileBase PhotoUpload { get; set; }
         public int AuthorId { get; set; }
         public int CategoryId { get; set; }
-      
-
-
-
-      
-        public Category Category { get; set; }
-        public Author Author { get; set; }
         
+ 
+
+
+
+
+
+      
+        public virtual  Category Category { get; set; }
+        public  virtual Author Author { get; set; }
+       
+
 
 
 

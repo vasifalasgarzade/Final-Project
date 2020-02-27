@@ -18,5 +18,7 @@ namespace Meverex.Models
         public DateTime Date { get; set; }
         public bool Status { get; set; }
         public DateTime CreateAt { get; set; }
+       
+
     }
 }

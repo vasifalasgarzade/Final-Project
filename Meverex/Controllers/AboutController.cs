@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.ViewModels;
 
 namespace Meverex.Controllers
 {
@@ -11,7 +12,15 @@ namespace Meverex.Controllers
         // GET: About
         public ActionResult Index()
         {
-            return View();
+            AboutViewModel model = new AboutViewModel
+            {
+                Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList(),
+                AboutUs = _context.AboutUs.FirstOrDefault(),
+                Authors = _context.Authors.ToList()
+
+            };
+            
+            return View(model);
         }
     }
 }
