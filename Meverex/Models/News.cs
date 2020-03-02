@@ -14,15 +14,18 @@ namespace Meverex.Models
 
         [Required,MaxLength(100)]
         public string Photo { get; set; }
-        [Required, MaxLength(100)]
-        public string Tittle { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase PhotoUpload { get; set; }
 
+        [Required, MaxLength(200)]
+        public string Tittle { get; set; }
+        [Required, MaxLength(400)]
         public string Description { get; set; }
+        [Required, Column(TypeName = "date")]
         public DateTime Date { get; set; }
         public bool Status { get; set; }
        
-        [NotMapped]
-        public HttpPostedFileBase PhotoUpload { get; set; }
+      
         public int AuthorId { get; set; }
         public int CategoryId { get; set; }
         

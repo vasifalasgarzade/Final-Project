@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Meverex.Data;
+using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
@@ -34,8 +35,17 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Photo,Tittle,Body,Status")] AboutUs aboutUs)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,Tittle,Body,Status,PhotoUpload")] AboutUs aboutUs)
         {
+            try
+            {
+                aboutUs.Photo = FileManager.Upload(aboutUs.PhotoUpload);
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.AboutUs.Add(aboutUs);
@@ -66,11 +76,29 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Photo,Tittle,Body,Status")] AboutUs aboutUs)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,Photo,Tittle,Body,Status,PhotoUpload")] AboutUs aboutUs)
         {
+
+            if (aboutUs.PhotoUpload != null)
+            {
+                try
+                {
+                    FileManager.Delete(aboutUs.Photo);
+                    aboutUs.Photo = FileManager.Upload(aboutUs.PhotoUpload);
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("PhotoUpload", e.Message);
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(aboutUs).State = EntityState.Modified;
+
+                db.Entry(aboutUs).Property(s => s.Status == true).IsModified = false;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

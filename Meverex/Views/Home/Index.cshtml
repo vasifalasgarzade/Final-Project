@@ -11,7 +11,7 @@
             {
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
                 <div class="single-post">
-                    <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
+                    <a href="#"><img src="~/Uploads/post/@item.Photo" alt=""></a>
                     <div class="post-inside-content">
                         <div class="category-tag"><a href="#" class="@item.Category.Color">@item.Category.Name</a></div>
                         <h2><a href="#">@item.Tittle</a></h2>
@@ -32,7 +32,7 @@
     {
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                 <div class="single-post">
-                    <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
+                    <a href="#"><img src="~/Uploads/post/@item.Photo" alt=""></a>
                     <div class="post-inside-content">
                         <div class="category-tag"><a href="#" class="@item.Category.Color">@item.Category.Name</a></div>
                         <h2><a href="#">@item.Tittle</a></h2>
@@ -70,7 +70,7 @@
                         
                         <div class="row single-post-2">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <a href="#"><img src="~/Public/images/post/@Model.FashionItem.Photo" alt=""></a>
+                                <a href="#"><img src="~/Uploads/post/@Model.FashionItem.Photo" alt=""></a>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="post-inside-content">
@@ -89,7 +89,7 @@
                     {
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                     <div class="single-post-2">
-                        <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
+                        <a href="#"><img src="~/Uploads/post/@item.Photo" alt=""></a>
                         <div class="post-inside-content">
                             <h2><a href="#">@item.Tittle</a></h2>
                             <div class="post-meta">
@@ -120,7 +120,7 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
 
                                 <div class="single-post">
-                                    <a href="#"><img src="~/Public/images/post/@Model.PopularNews.Photo" alt=""></a>
+                                    <a href="#"><img src="~/Uploads/post/@Model.PopularNews.Photo" alt=""></a>
                                     <div class="post-inside-content">
                                         <div class="category-tag"><a href="#" class="@Model.PopularNews.Category.Color">@Model.PopularNews.Category.Name</a></div>
                                         <h2><a href="#">@Model.PopularNews.Tittle</a></h2>
@@ -139,7 +139,7 @@
                               {
                                 <div class="single-list-post">
                                     <div class="list-post-img">
-                                        <a href="#"><img src="~/Public/images/post/@p.Photo" alt=""></a>
+                                        <a href="#"><img src="~/Uploads/post/@p.Photo" alt=""></a>
                                     </div>
                                     <div class="list-post-content">
                                         <a href="#" class="cl-green">@p.Category.Name</a>
@@ -184,7 +184,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="single-post-2">
                         <a href="@item.IconUrl" target="_blank">
-                            <img src="~/Public/images/post/@item.Photo" alt="">
+                            <img src="~/Uploads/post/@item.Photo" alt="">
                             <i class="fa @item.Icon"></i>
                         </a>
                         <div class="post-inside-content">
@@ -215,7 +215,7 @@
                         <div class="col-xl-12">
                             <div class="row single-post-2">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                    <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
+                                    <a href="#"><img src="~/Uploads/post/@item.Photo" alt=""></a>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                     <div class="post-inside-content">
@@ -247,7 +247,7 @@
                         {
                         <div class="single-post-3">
                             <div class="list-post-img">
-                                <img src="~/Public/images/post/@item.Photo" alt="">
+                                <img src="~/Uploads/post/@item.Photo" alt="">
                                 <a class="tag  @item.Category.Color" href="#">@item.Category.Name</a>
                             </div>
                             <div class="list-post-content">
@@ -296,7 +296,7 @@
                     @foreach (var item in Model.News.Take(5))
                     {
                     <div class="single-post">
-                        <a href="#"><img src="~/Public/images/post/@item.Photo" alt=""></a>
+                        <a href="#"><img src="~/Uploads/post/@item.Photo" alt=""></a>
                         <div class="post-inside-content">
                             <div class="category-tag"><a href="#" class="@item.Category.Color">@item.Category.Name</a></div>
                             <h2><a href="#">@item.Tittle</a></h2>
@@ -327,7 +327,7 @@
             <div class="col-xl-8">
                 @foreach (var item in Model.News.Take(3))
                 {
-                <div class="thumbnail-post " style="background-image:url('/Public/images/post/@item.Photo')  ">
+                <div class="thumbnail-post " style="background-image:url('/Uploads/post/@item.Photo')  ">
                     <div class="category-tag">
                         <a href="#" class="cl-yellow">@item.Category.Name</a>
                     </div>

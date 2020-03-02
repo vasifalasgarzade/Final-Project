@@ -15,7 +15,7 @@ namespace Meverex.Controllers
             AboutViewModel model = new AboutViewModel
             {
                 Sliders = _context.Sliders.OrderByDescending(p => p.Id).Take(3).ToList(),
-                AboutUs = _context.AboutUs.FirstOrDefault(),
+                AboutUs = _context.AboutUs.OrderByDescending(a=>a.Id).FirstOrDefault(),
                 Authors = _context.Authors.ToList()
 
             };

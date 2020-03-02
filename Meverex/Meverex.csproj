@@ -131,9 +131,17 @@
     <Compile Include="Areas\Admin\Controllers\AuthorsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactUsController.cs" />
     <Compile Include="Areas\Admin\Controllers\FashionItemsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FashionsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FoodsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomesController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MoreNewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MostViewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PoliticsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PopularNewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SportsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TexnologiesController.cs" />
     <Compile Include="Areas\Admin\Models\Login.cs" />
     <Compile Include="Controllers\AboutController.cs" />
@@ -143,6 +151,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Helper\FileManager.cs" />
     <Compile Include="Migrations\202001271612187_init.cs" />
     <Compile Include="Migrations\202001271612187_init.Designer.cs">
       <DependentUpon>202001271612187_init.cs</DependentUpon>
@@ -223,6 +232,14 @@
     <Compile Include="Migrations\202002221316560_adminmodelscreate.Designer.cs">
       <DependentUpon>202002221316560_adminmodelscreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003010949488_aboutusmodelupdate.cs" />
+    <Compile Include="Migrations\202003010949488_aboutusmodelupdate.Designer.cs">
+      <DependentUpon>202003010949488_aboutusmodelupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003011111365_allmodelsupdate.cs" />
+    <Compile Include="Migrations\202003011111365_allmodelsupdate.Designer.cs">
+      <DependentUpon>202003011111365_allmodelsupdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutUs.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -239,7 +256,6 @@
     <Compile Include="Models\Politic.cs" />
     <Compile Include="Models\PopularNews.cs" />
     <Compile Include="Models\Post.cs" />
-    <Compile Include="Models\Service.cs" />
     <Compile Include="Models\Slider.cs" />
     <Compile Include="Models\SocialLink.cs" />
     <Compile Include="Controllers\TexnologyController.cs" />
@@ -2158,6 +2174,30 @@
     <Content Include="Areas\Admin\Views\FashionItems\Create.cshtml" />
     <Content Include="Areas\Admin\Views\FashionItems\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\FashionItems\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PopularNews\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PopularNews\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PopularNews\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Politics\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Politics\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Politics\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MostViews\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MostViews\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MostViews\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MoreNews\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MoreNews\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MoreNews\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sports\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Sports\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sports\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Fashions\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Fashions\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Fashions\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Foods\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Foods\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Foods\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\fonts\fontawesome-webfont3e6e.eot" />
     <Content Include="Public\fonts\fontawesome-webfont3e6e.ttf" />
@@ -2239,6 +2279,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002221316560_adminmodelscreate.resx">
       <DependentUpon>202002221316560_adminmodelscreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003010949488_aboutusmodelupdate.resx">
+      <DependentUpon>202003010949488_aboutusmodelupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003011111365_allmodelsupdate.resx">
+      <DependentUpon>202003011111365_allmodelsupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

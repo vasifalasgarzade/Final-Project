@@ -13,6 +13,7 @@ namespace Meverex.Data
         {
         }
         public DbSet<Setting> Settings { get; set; }
+   
         public DbSet<Texnology> Texnologies { get; set; }
         public DbSet<SocialLink> SocialLinks { get; set; }
         public DbSet<Author> Authors { get; set; }
