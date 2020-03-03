@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using Meverex.Models;
 
 namespace Meverex.ViewModels
@@ -10,6 +7,6 @@ namespace Meverex.ViewModels
     {
         public List<SocialLink> SocialLinks { get; set; }
         public ContactUs ContactUs { get; set; }
-
+        public ContactMessage Message { get; set; }
     }
 }

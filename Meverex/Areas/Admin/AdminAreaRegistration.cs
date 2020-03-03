@@ -17,7 +17,7 @@ namespace Meverex.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { Controller = "Login", action = "Index", id = UrlParameter.Optional },
+                new { Controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new string[] { "Meverex.Areas.Admin.Controllers" }
             );
         }

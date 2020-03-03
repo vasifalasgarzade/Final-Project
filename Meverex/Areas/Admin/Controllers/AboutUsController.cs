@@ -6,12 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Areas.Admin.Filters;
 using Meverex.Data;
 using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
 {
+    [AdminAuth]
     public class AboutUsController : Controller
     {
         private FinalDbMeverex db = new FinalDbMeverex();
@@ -21,8 +23,6 @@ namespace Meverex.Areas.Admin.Controllers
         {
             return View(db.AboutUs.ToList());
         }
-
-     
 
         // GET: Admin/AboutUs/Create
         public ActionResult Create()
@@ -36,11 +36,12 @@ namespace Meverex.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Create([Bind(Include = "Id,Tittle,Body,Status,PhotoUpload")] AboutUs aboutUs)
+        public ActionResult Create( AboutUs aboutUs)
         {
             try
             {
                 aboutUs.Photo = FileManager.Upload(aboutUs.PhotoUpload);
+                
             }
             catch (Exception e)
             {
@@ -77,20 +78,29 @@ namespace Meverex.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Edit([Bind(Include = "Id,Photo,Tittle,Body,Status,PhotoUpload")] AboutUs aboutUs)
+        public ActionResult Edit( AboutUs aboutUs)
         {
 
             if (aboutUs.PhotoUpload != null)
             {
                 try
                 {
-                    FileManager.Delete(aboutUs.Photo);
                     aboutUs.Photo = FileManager.Upload(aboutUs.PhotoUpload);
                 }
                 catch (Exception e)
                 {
                     ModelState.AddModelError("PhotoUpload", e.Message);
                 }
+
+                if (ModelState.IsValid)
+                {
+                    db.AboutUs.Add(aboutUs);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+                
+                return View(aboutUs);
             }
 
             if (ModelState.IsValid)

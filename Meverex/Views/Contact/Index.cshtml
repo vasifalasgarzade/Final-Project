@@ -37,24 +37,45 @@
             </div>
             <div class="col-xl-6">
                 <div class="contact-form">
-                    <form action="#">
+                    <form action="@Url.Action("index")" method="post">
                         <h4>Get in touch</h4>
                         <p>Send us a message if you need any help</p>
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="Phone">
-                        <input type="email" placeholder="Email">
-                        <textarea name="msg" rows="4" placeholder="Your message"></textarea>
-                        <button type="submit" class="bttn-mid btn-fill">Send message</button>
+                        <div class="form-group">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            @Html.LabelFor(m => m.Message.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-4 mb-3">
+                                @Html.EditorFor(m => m.Message.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(m => m.Message.Name, "", new { @class = "text-danger" })
+                            </div>
+                            @Html.LabelFor(m => m.Message.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-4 mb-3">
+                                @Html.EditorFor(m => m.Message.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(m => m.Message.Phone, "", new { @class = "text-danger" })
+                            </div>
+                            @Html.LabelFor(m => m.Message.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-4 mb-3">
+                                @Html.EditorFor(m => m.Message.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(m => m.Message.Email, "", new { @class = "text-danger" })
+                            </div>
+                            @Html.LabelFor(m => m.Message.Desc, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-4 mb-3">
+                                @Html.TextAreaFor(m => m.Message.Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(m => m.Message.Desc, "", new { @class = "text-danger" })
+                            </div>
+                            <button type="submit" class="bttn-mid btn-fill">Send message</button>
+                        </div>
                     </form>
                 </div>
             </div>
             <div class="col-xl-6">
                 <div class="contact-content">
                     <h4>Contact Details</h4>
-                    
+
                     <p>@Model.ContactUs.Location</p>
                     <h5>Call for emergencies</h5>
-                    
+
                     <p>@Model.ContactUs.Number</p>
                     <div class="social">
                         @foreach (var item in Model.SocialLinks)

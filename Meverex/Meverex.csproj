@@ -129,10 +129,12 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AboutUsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactMessagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactUsController.cs" />
     <Compile Include="Areas\Admin\Controllers\FashionItemsController.cs" />
     <Compile Include="Areas\Admin\Controllers\FashionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\FoodsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomesController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MoreNewsController.cs" />
@@ -143,6 +145,7 @@
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SportsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TexnologiesController.cs" />
+    <Compile Include="Areas\Admin\Filters\AdminAuth.cs" />
     <Compile Include="Areas\Admin\Models\Login.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -240,11 +243,36 @@
     <Compile Include="Migrations\202003011111365_allmodelsupdate.Designer.cs">
       <DependentUpon>202003011111365_allmodelsupdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003021411458_contactupdatemodel.cs" />
+    <Compile Include="Migrations\202003021411458_contactupdatemodel.Designer.cs">
+      <DependentUpon>202003021411458_contactupdatemodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003021413165_contactupdatemodel1.cs" />
+    <Compile Include="Migrations\202003021413165_contactupdatemodel1.Designer.cs">
+      <DependentUpon>202003021413165_contactupdatemodel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003021704184_updatecontactus.cs" />
+    <Compile Include="Migrations\202003021704184_updatecontactus.Designer.cs">
+      <DependentUpon>202003021704184_updatecontactus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003031233286_ContactUsPropertyModified.cs" />
+    <Compile Include="Migrations\202003031233286_ContactUsPropertyModified.Designer.cs">
+      <DependentUpon>202003031233286_ContactUsPropertyModified.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003031351557_ContactMessageTableCreated.cs" />
+    <Compile Include="Migrations\202003031351557_ContactMessageTableCreated.Designer.cs">
+      <DependentUpon>202003031351557_ContactMessageTableCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003031359427_ContactMessageTableModified.cs" />
+    <Compile Include="Migrations\202003031359427_ContactMessageTableModified.Designer.cs">
+      <DependentUpon>202003031359427_ContactMessageTableModified.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutUs.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\ContactMessage.cs" />
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\Fashion.cs" />
     <Compile Include="Models\FashionItem.cs" />
@@ -1882,6 +1910,7 @@
     <Content Include="Global.asax" />
     <Content Include="Public\css\animate.css" />
     <Content Include="Public\css\bootstrap.min.css" />
+    <Content Include="Public\css\dropify\dropify.css" />
     <Content Include="Public\css\font-awesome.min.css" />
     <Content Include="Public\css\jquery-ui.css" />
     <Content Include="Public\css\magnific-popup.css" />
@@ -1889,6 +1918,7 @@
     <Content Include="Public\css\owl.carousel.min.css" />
     <Content Include="Public\css\owl.video.play.html" />
     <Content Include="Public\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Public\fonts\dropify\dropify.svg" />
     <Content Include="Public\images\404.jpg" />
     <Content Include="Public\images\about.jpg" />
     <Content Include="Public\images\ads728.jpg" />
@@ -1974,6 +2004,7 @@
     <Content Include="Public\images\ui-icons_cc0000_256x240.html" />
     <Content Include="Public\images\ui-icons_ffffff_256x240.html" />
     <Content Include="Public\js\bootstrap.min.js" />
+    <Content Include="Public\js\dropify\dropify.js" />
     <Content Include="Public\js\imagesloaded.pkgd.min.js" />
     <Content Include="Public\js\isotope.pkgd.min.js" />
     <Content Include="Public\js\jquery-3.2.1.min.js" />
@@ -2002,6 +2033,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Account\" />
     <Folder Include="Areas\Admin\Views\User\" />
     <Folder Include="Uploads\" />
     <Folder Include="Views\Base\" />
@@ -2198,6 +2230,16 @@
     <Content Include="Areas\Admin\Views\Posts\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Posts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Posts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactMessages\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactMessages\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactMessages\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactMessages\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactMessages\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Galleries\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Galleries\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Galleries\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Galleries\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Galleries\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\fonts\fontawesome-webfont3e6e.eot" />
     <Content Include="Public\fonts\fontawesome-webfont3e6e.ttf" />
@@ -2218,6 +2260,9 @@
     <Content Include="Views\Shared\_Lastest.cshtml" />
     <Content Include="Views\Shared\_QuikLink.cshtml" />
     <Content Include="Views\Shared\_Sociallink.cshtml" />
+    <Content Include="Public\fonts\dropify\dropify.eot" />
+    <Content Include="Public\fonts\dropify\dropify.ttf" />
+    <Content Include="Public\fonts\dropify\dropify.woff" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001271612187_init.resx">
@@ -2285,6 +2330,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003011111365_allmodelsupdate.resx">
       <DependentUpon>202003011111365_allmodelsupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021411458_contactupdatemodel.resx">
+      <DependentUpon>202003021411458_contactupdatemodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021413165_contactupdatemodel1.resx">
+      <DependentUpon>202003021413165_contactupdatemodel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021704184_updatecontactus.resx">
+      <DependentUpon>202003021704184_updatecontactus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003031233286_ContactUsPropertyModified.resx">
+      <DependentUpon>202003031233286_ContactUsPropertyModified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003031351557_ContactMessageTableCreated.resx">
+      <DependentUpon>202003031351557_ContactMessageTableCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003031359427_ContactMessageTableModified.resx">
+      <DependentUpon>202003031359427_ContactMessageTableModified.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

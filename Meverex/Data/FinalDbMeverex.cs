@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using Meverex.Models;
 
 namespace Meverex.Data
 {
-    public class FinalDbMeverex :DbContext
+    public class FinalDbMeverex : DbContext
     {
-        public FinalDbMeverex(): base("FinalDbMeverex")
+        public FinalDbMeverex() : base("FinalDbMeverex")
         {
         }
         public DbSet<Setting> Settings { get; set; }
-   
+
         public DbSet<Texnology> Texnologies { get; set; }
         public DbSet<SocialLink> SocialLinks { get; set; }
         public DbSet<Author> Authors { get; set; }
@@ -33,6 +29,6 @@ namespace Meverex.Data
         public DbSet<Post> Posts { get; set; }
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<ContactMessage> ContactMessages { get; set; }
     }
-  
 }
