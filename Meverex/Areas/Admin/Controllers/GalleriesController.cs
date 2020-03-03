@@ -6,11 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Areas.Admin.Filters;
 using Meverex.Data;
+using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
 {
+    [AdminAuth]
     public class GalleriesController : Controller
     {
         private FinalDbMeverex db = new FinalDbMeverex();
@@ -21,20 +24,7 @@ namespace Meverex.Areas.Admin.Controllers
             return View(db.Galleries.ToList());
         }
 
-        // GET: Admin/Galleries/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Gallery gallery = db.Galleries.Find(id);
-            if (gallery == null)
-            {
-                return HttpNotFound();
-            }
-            return View(gallery);
-        }
+      
 
         // GET: Admin/Galleries/Create
         public ActionResult Create()
@@ -47,8 +37,18 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,AuthorComment,Photo")] Gallery gallery)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,AuthorComment,PhotoUpload")] Gallery gallery)
         {
+            try
+            {
+                gallery.Photo = FileManager.Upload(gallery.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Galleries.Add(gallery);
@@ -79,8 +79,18 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,AuthorComment,Photo")] Gallery gallery)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,AuthorComment,Photo,PhotoUpload")] Gallery gallery)
         {
+            try
+            {
+                gallery.Photo = FileManager.Upload(gallery.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(gallery).State = EntityState.Modified;
@@ -102,19 +112,12 @@ namespace Meverex.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(gallery);
-        }
-
-        // POST: Admin/Galleries/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Gallery gallery = db.Galleries.Find(id);
             db.Galleries.Remove(gallery);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+    
 
         protected override void Dispose(bool disposing)
         {

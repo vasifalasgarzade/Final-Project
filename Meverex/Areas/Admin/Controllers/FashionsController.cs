@@ -6,11 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Areas.Admin.Filters;
 using Meverex.Data;
+using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
 {
+    [AdminAuth]
     public class FashionsController : Controller
     {
         private FinalDbMeverex db = new FinalDbMeverex();
@@ -37,8 +40,18 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CategoryId,AuthorId,Photo,Tittle,Description,Date,Status,CreateAt")] Fashion fashion)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,CategoryId,AuthorId,PhotoUpload,Tittle,Description,Date,Status,CreateAt")] Fashion fashion)
         {
+            try
+            {
+                fashion.Photo = FileManager.Upload(fashion.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Fashions.Add(fashion);
@@ -46,8 +59,6 @@ namespace Meverex.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Name", fashion.AuthorId);
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", fashion.CategoryId);
             return View(fashion);
         }
 
@@ -73,8 +84,18 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CategoryId,AuthorId,Photo,Tittle,Description,Date,Status,CreateAt")] Fashion fashion)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,CategoryId,AuthorId,Photo,Tittle,Description,Date,Status,CreateAt,PhotoUpload")] Fashion fashion)
         {
+            try
+            {
+                fashion.Photo = FileManager.Upload(fashion.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(fashion).State = EntityState.Modified;
@@ -83,6 +104,7 @@ namespace Meverex.Areas.Admin.Controllers
             }
             ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Name", fashion.AuthorId);
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", fashion.CategoryId);
+
             return View(fashion);
         }
 

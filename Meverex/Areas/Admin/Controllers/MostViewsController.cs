@@ -6,11 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Areas.Admin.Filters;
 using Meverex.Data;
+using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
 {
+    [AdminAuth]
     public class MostViewsController : Controller
     {
         private FinalDbMeverex db = new FinalDbMeverex();
@@ -37,8 +40,20 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CategoryId,AuthorId,Photo,Tittle,Description,Date,Status")] MostView mostView)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,CategoryId,AuthorId,Tittle,Description,Date,Status,PhotoUpload")] MostView mostView)
         {
+            try
+            {
+                mostView.Photo = FileManager.Upload(mostView.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+
+            }
             if (ModelState.IsValid)
             {
                 db.MostViews.Add(mostView);
@@ -73,8 +88,20 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CategoryId,AuthorId,Photo,Tittle,Description,Date,Status")] MostView mostView)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,CategoryId,AuthorId,Photo,Tittle,Description,Date,Status,PhotoUpload")] MostView mostView)
         {
+            try
+            {
+                mostView.Photo = FileManager.Upload(mostView.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(mostView).State = EntityState.Modified;

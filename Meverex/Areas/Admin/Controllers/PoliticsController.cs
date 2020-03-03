@@ -6,11 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Areas.Admin.Filters;
 using Meverex.Data;
+using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
 {
+    [AdminAuth]
     public class PoliticsController : Controller
     {
         private FinalDbMeverex db = new FinalDbMeverex();
@@ -35,8 +38,20 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Photo,Tittle,Date,AuthorId,Icon,IconUrl,Status")] Politic politic)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,PhotoUpload,Tittle,Date,AuthorId,Icon,IconUrl,Status")] Politic politic)
         {
+            try
+            {
+                politic.Photo = FileManager.Upload(politic.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+
+            }
             if (ModelState.IsValid)
             {
                 db.Politics.Add(politic);
@@ -69,8 +84,19 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Photo,Tittle,Date,AuthorId,Icon,IconUrl,Status")] Politic politic)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,Photo,Tittle,Date,AuthorId,Icon,IconUrl,Status,PhotoUpload")] Politic politic)
         {
+            try
+            {
+                politic.Photo = FileManager.Upload(politic.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(politic).State = EntityState.Modified;

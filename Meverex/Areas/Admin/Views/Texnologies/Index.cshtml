@@ -12,21 +12,15 @@
 
         <table class="table table-bordered">
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.BtnName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BtnUrl)
-                </th>
+               
+               
                 <th>
                     @Html.DisplayNameFor(model => model.Photo)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Tittle)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
+               
                 <th>
                     @Html.DisplayNameFor(model => model.Status)
                 </th>
@@ -36,21 +30,14 @@
             @foreach (var item in Model)
             {
                 <tr>
+                   
                     <td>
-                        @Html.DisplayFor(modelItem => item.BtnName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BtnUrl)
-                    </td>
-                    <td>
-                        <img src="~/Public/images/post/@item.Photo" width="150" height="50" class="bg-dark" />
+                        <img src="~/Uploads/@item.Photo" width="150" height="50" class="bg-dark" />
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Tittle)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
+                   
                     <td>
                         @Html.DisplayFor(modelItem => item.Status)
                     </td>
@@ -59,7 +46,7 @@
                             <i class="fas fa-pencil-alt"></i>
                         </a>
 
-                        <a onclick="return confirm('Silinsin?')" href="@Url.Action("delete",new { id = item.Id })" class="text-danger sweet-delete">
+                        <a  href="@Url.Action("delete",new { id = item.Id })" class="text-danger sweet-delete">
                             <i class="fas fa-trash"></i>
                         </a>
                     </td>

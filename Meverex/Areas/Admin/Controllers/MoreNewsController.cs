@@ -6,11 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Areas.Admin.Filters;
 using Meverex.Data;
+using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
 {
+    [AdminAuth]
     public class MoreNewsController : Controller
     {
         private FinalDbMeverex db = new FinalDbMeverex();
@@ -36,8 +39,20 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CategoryId,Photo,Tittle,Description,Date,Status")] MoreNew moreNew)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,CategoryId,PhotoUpload,Tittle,Description,Date,Status")] MoreNew moreNew)
         {
+            try
+            {
+                moreNew.Photo = FileManager.Upload(moreNew.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+                
+            }
             if (ModelState.IsValid)
             {
                 db.MoreNews.Add(moreNew);
@@ -70,8 +85,20 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CategoryId,Photo,Tittle,Description,Date,Status")] MoreNew moreNew)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,CategoryId,Photo,Tittle,Description,Date,Status,PhotoUpload")] MoreNew moreNew)
         {
+            try
+            {
+                moreNew.Photo = FileManager.Upload(moreNew.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+                
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(moreNew).State = EntityState.Modified;

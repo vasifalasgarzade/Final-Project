@@ -14,7 +14,7 @@ namespace Meverex.Models
         public Category Category { get; set; }
         public int AuthorId { get; set; }
         public Author Author { get; set; }
-        [Required, MaxLength(100)]
+        [ MaxLength(100)]
         public string Photo { get; set; }
         [NotMapped]
         public HttpPostedFileBase PhotoUpload { get; set; }

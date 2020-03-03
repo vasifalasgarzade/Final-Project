@@ -12,7 +12,7 @@ namespace Meverex.Models
     {
         public int Id { get; set; }
 
-        [Required,MaxLength(100)]
+        [MaxLength(100)]
         public string Photo { get; set; }
         [NotMapped]
         public HttpPostedFileBase PhotoUpload { get; set; }
@@ -22,6 +22,7 @@ namespace Meverex.Models
         [Required, MaxLength(400)]
         public string Description { get; set; }
         [Required, Column(TypeName = "date")]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         public bool Status { get; set; }
        

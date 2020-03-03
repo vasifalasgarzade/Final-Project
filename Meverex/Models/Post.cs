@@ -15,7 +15,7 @@ namespace Meverex.Models
         public string Title { get; set; }
         [Required, MaxLength(500)]
         public string Description { get; set; }
-        [Required, MaxLength(300)]
+        [ MaxLength(300)]
         public string Photo { get; set; }
 
         [NotMapped]

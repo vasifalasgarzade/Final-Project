@@ -6,11 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Areas.Admin.Filters;
 using Meverex.Data;
+using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
 {
+    [AdminAuth]
     public class FoodsController : Controller
     {
         private FinalDbMeverex db = new FinalDbMeverex();
@@ -36,8 +39,19 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CategoryId,Photo,Tittle,Description,CreateAt,Status")] Food food)
+        [ValidateInput(false)]
+
+        public ActionResult Create([Bind(Include = "Id,CategoryId,PhotoUpload,Tittle,Description,CreateAt,Status")] Food food)
         {
+            try
+            {
+                food.Photo = FileManager.Upload(food.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Foods.Add(food);
@@ -45,7 +59,6 @@ namespace Meverex.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", food.CategoryId);
             return View(food);
         }
 
@@ -70,8 +83,18 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CategoryId,Photo,Tittle,Description,CreateAt,Status")] Food food)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,CategoryId,Photo,Tittle,Description,CreateAt,Status,PhotoUpload")] Food food)
         {
+            try
+            {
+                food.Photo = FileManager.Upload(food.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(food).State = EntityState.Modified;

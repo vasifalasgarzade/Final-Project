@@ -23,6 +23,7 @@ namespace Meverex.Models
         public string Description { get; set; }
 
         [Required, Column(TypeName = "date")]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         public bool Status { get; set; }
     }

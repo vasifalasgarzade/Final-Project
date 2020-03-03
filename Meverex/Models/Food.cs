@@ -13,7 +13,7 @@ namespace Meverex.Models
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        [Required, MaxLength(250)]
+        [ MaxLength(250)]
         public string Photo { get; set; }
         [NotMapped]
         public HttpPostedFileBase PhotoUpload { get; set; }

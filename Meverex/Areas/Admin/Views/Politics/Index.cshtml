@@ -26,9 +26,7 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Icon)
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.IconUrl)
-                    </th>
+                  
                     <th>
                         @Html.DisplayNameFor(model => model.Status)
                     </th>
@@ -42,7 +40,7 @@
                             @Html.DisplayFor(modelItem => item.Author.Name)
                         </td>
                         <td>
-                            <img src="~/Public/images/post/@item.Photo" width="150" height="50" class="bg-dark" />
+                            <img src="~/Uploads/@item.Photo" width="150" height="50" class="bg-dark" />
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Tittle)
@@ -53,9 +51,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Icon)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IconUrl)
-                        </td>
+                       
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)
                         </td>

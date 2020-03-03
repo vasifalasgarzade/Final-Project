@@ -20,15 +20,11 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Tittle)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
+              
                 <th>
                     @Html.DisplayNameFor(model => model.Date)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Status)
-                </th>
+              
                 <th></th>
             </tr>
 
@@ -39,20 +35,16 @@
                         @Html.DisplayFor(modelItem => item.Category.Name)
                     </td>
                     <td>
-                        <img src="~/Public/images/post/@item.Photo" width="150" height="50" class="bg-dark" />
+                        <img src="~/Uploads/@item.Photo" width="150" height="50" class="bg-dark" />
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Tittle)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
+                   
                     <td>
                         @Html.DisplayFor(modelItem => item.Date)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
+                   
                     <td>
                         <a href="@Url.Action("edit",new { id = item.Id })">
                             <i class="fas fa-pencil-alt"></i>

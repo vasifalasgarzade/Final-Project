@@ -24,6 +24,7 @@ namespace Meverex.Models
         [Required, MaxLength(450)]
         public string Description { get; set; }
         [Required, Column(TypeName = "date")]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         public bool Status { get; set; }
         public virtual ICollection<News> News { get; set; }

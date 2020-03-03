@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Meverex.Models
@@ -26,6 +27,10 @@ namespace Meverex.Models
         [DataType(DataType.MultilineText)]
         [Column(TypeName = "ntext")]
         public string Desc { get; set; }
+
+        [Required, Column(TypeName = "date")]
+        [DataType(DataType.Date)]
+        public DateTime Date { get; set; }
 
         public bool Status { get; set; }
     }

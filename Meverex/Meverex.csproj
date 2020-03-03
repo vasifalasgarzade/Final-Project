@@ -143,6 +143,7 @@
     <Compile Include="Areas\Admin\Controllers\PoliticsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PopularNewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SportsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TexnologiesController.cs" />
     <Compile Include="Areas\Admin\Filters\AdminAuth.cs" />
@@ -266,6 +267,18 @@
     <Compile Include="Migrations\202003031359427_ContactMessageTableModified.cs" />
     <Compile Include="Migrations\202003031359427_ContactMessageTableModified.Designer.cs">
       <DependentUpon>202003031359427_ContactMessageTableModified.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003031642068_updateallmodels.cs" />
+    <Compile Include="Migrations\202003031642068_updateallmodels.Designer.cs">
+      <DependentUpon>202003031642068_updateallmodels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003032052263_allmodelsupdate1.cs" />
+    <Compile Include="Migrations\202003032052263_allmodelsupdate1.Designer.cs">
+      <DependentUpon>202003032052263_allmodelsupdate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003032232404_settingmodelsupdate.cs" />
+    <Compile Include="Migrations\202003032232404_settingmodelsupdate.Designer.cs">
+      <DependentUpon>202003032232404_settingmodelsupdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutUs.cs" />
@@ -2033,8 +2046,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Account\" />
-    <Folder Include="Areas\Admin\Views\User\" />
     <Folder Include="Uploads\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
@@ -2236,10 +2247,11 @@
     <Content Include="Areas\Admin\Views\ContactMessages\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ContactMessages\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Galleries\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Galleries\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Galleries\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Galleries\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Galleries\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\fonts\fontawesome-webfont3e6e.eot" />
     <Content Include="Public\fonts\fontawesome-webfont3e6e.ttf" />
@@ -2348,6 +2360,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003031359427_ContactMessageTableModified.resx">
       <DependentUpon>202003031359427_ContactMessageTableModified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003031642068_updateallmodels.resx">
+      <DependentUpon>202003031642068_updateallmodels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003032052263_allmodelsupdate1.resx">
+      <DependentUpon>202003032052263_allmodelsupdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003032232404_settingmodelsupdate.resx">
+      <DependentUpon>202003032232404_settingmodelsupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

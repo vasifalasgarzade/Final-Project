@@ -69,7 +69,6 @@ C:\Users\Vasif\Desktop\final\Meverex\Meverex\bin\System.Web.WebPages.Razor.xml
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\bin\Newtonsoft.Json.xml
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\bin\Antlr3.Runtime.pdb
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.csprojAssemblyReference.cache
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.csproj.CoreCompileInputs.cache
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.csproj.CopyComplete
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.dll
@@ -107,3 +106,6 @@ C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.update
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.ContactUsPropertyModified.resources
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.ContactMessageTableCreated.resources
 C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.ContactMessageTableModified.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.updateallmodels.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.allmodelsupdate1.resources
+C:\Users\Vasif\Desktop\final\Meverex\Meverex\obj\Debug\Meverex.Migrations.settingmodelsupdate.resources

@@ -12,7 +12,7 @@ namespace Meverex.Models
         public int Id { get; set; }
         [Required, MaxLength(250)]
         public string AuthorComment { get; set; }
-        [Required, MaxLength(250)]
+        [ MaxLength(250)]
         public string Photo { get; set; }
         [NotMapped]
         public HttpPostedFileBase PhotoUpload { get; set; }

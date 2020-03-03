@@ -6,11 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Areas.Admin.Filters;
 using Meverex.Data;
+using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
 {
+    [AdminAuth]
     public class NewsController : Controller
     {
         private FinalDbMeverex db = new FinalDbMeverex();
@@ -37,8 +40,20 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Photo,Tittle,Description,Date,Status,AuthorId,CategoryId")] News news)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,PhotoUpload,Tittle,Description,Date,Status,AuthorId,CategoryId")] News news)
         {
+            try
+            {
+                news.Photo = FileManager.Upload(news.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+
+            }
             if (ModelState.IsValid)
             {
                 db.News.Add(news);
@@ -73,8 +88,19 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Photo,Tittle,Description,Date,Status,AuthorId,CategoryId")] News news)
+        public ActionResult Edit([Bind(Include = "Id,Photo,PhotoUpload,Tittle,Description,Date,Status,AuthorId,CategoryId")] News news)
         {
+            try
+            {
+                news.Photo = FileManager.Upload(news.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(news).State = EntityState.Modified;

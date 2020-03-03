@@ -6,11 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Areas.Admin.Filters;
 using Meverex.Data;
+using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
 {
+    [AdminAuth]
     public class PostsController : Controller
     {
         private FinalDbMeverex db = new FinalDbMeverex();
@@ -34,8 +37,20 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,Photo,AuthorComment,Text,Commnet,Status")] Post post)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,Title,Description,PhotoUpload,AuthorComment,Text,Commnet,Status")] Post post)
         {
+            try
+            {
+                post.Photo = FileManager.Upload(post.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+
+            }
             if (ModelState.IsValid)
             {
                 db.Posts.Add(post);
@@ -66,8 +81,20 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Description,Photo,AuthorComment,Text,Commnet,Status")] Post post)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,Title,Description,PhotoUpload,Photo,AuthorComment,Text,Commnet,Status")] Post post)
         {
+            try
+            {
+                post.Photo = FileManager.Upload(post.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(post).State = EntityState.Modified;

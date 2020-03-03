@@ -14,7 +14,7 @@ namespace Meverex.Models
         public Category Category { get; set; }
         public int AuthorId { get; set; }
         public Author Author { get; set; }
-        [Required, MaxLength(200)]
+        [ MaxLength(200)]
         public string Photo { get; set; }
         [NotMapped]
         public HttpPostedFileBase PhotoUpload { get; set; }
@@ -23,6 +23,7 @@ namespace Meverex.Models
         [Required, Column(TypeName ="ntext")]
         public string Description { get; set; }
         [Required, Column(TypeName = "date")]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         public bool Status { get; set; }
         public virtual ICollection<News> News { get; set; }

@@ -6,11 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Meverex.Areas.Admin.Filters;
 using Meverex.Data;
+using Meverex.Helper;
 using Meverex.Models;
 
 namespace Meverex.Areas.Admin.Controllers
 {
+    [AdminAuth]
     public class TexnologiesController : Controller
     {
         private FinalDbMeverex db = new FinalDbMeverex();
@@ -34,8 +37,20 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,BtnName,BtnUrl,Photo,Tittle,Description,Status")] Texnology texnology)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,BtnName,BtnUrl,PhotoUpload,Tittle,Description,Status")] Texnology texnology)
         {
+            try
+            {
+                texnology.Photo = FileManager.Upload(texnology.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+
+            }
             if (ModelState.IsValid)
             {
                 db.Texnologies.Add(texnology);
@@ -66,8 +81,20 @@ namespace Meverex.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,BtnName,BtnUrl,Photo,Tittle,Description,Status")] Texnology texnology)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,BtnName,BtnUrl,Photo,Tittle,Description,Status,PhotoUpload")] Texnology texnology)
         {
+            try
+            {
+                texnology.Photo = FileManager.Upload(texnology.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+
+
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(texnology).State = EntityState.Modified;

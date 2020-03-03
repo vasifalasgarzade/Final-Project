@@ -10,13 +10,14 @@ namespace Meverex.Models
     public class Politic
     {
         public int Id { get; set; }
-        [Required, MaxLength(200)]
+        [ MaxLength(200)]
         public string Photo { get; set; }
         [NotMapped]
         public HttpPostedFileBase PhotoUpload { get; set; }
         [Required, MaxLength(200)]
         public string Tittle { get; set; }
         [Required, Column(TypeName = "date")]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         public int AuthorId { get; set; }
         public Author Author { get; set; }

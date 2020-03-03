@@ -28,7 +28,7 @@
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.PhotoUpload, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-12">
+                        <div class="col-md-10">
                             @Html.TextBoxFor(model => model.PhotoUpload, new { @class = "form-control", @type = "file" })
                             @Html.ValidationMessageFor(model => model.PhotoUpload, "", new { @class = "text-danger" })
                         </div>
